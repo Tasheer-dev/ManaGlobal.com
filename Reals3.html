@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MANA GLOBAL – Real Estate | Project Marketing | Export</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --primary: #1c7ed6;
+      --primary-dark: #14508a;
+      --accent: #f5a623;
+      --bg: #050814;
+      --bg-light: #0b1020;
+      --text: #f5f5f5;
+      --muted: #a8b2c1;
+      --card-bg: #10172f;
+      --border: #1b2238;
+      --danger: #e03131;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 8, 20, 0.95);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #4dabf7, #1c7ed6 40%, #111827 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 0 25px rgba(29, 78, 216, 0.75);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active-nav {
+      color: var(--text);
+      border-bottom-color: var(--primary);
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      border-radius: 999px;
+      padding: 2px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* THEME TOGGLE */
+    .theme-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+    }
+
+    /* HERO VIDEO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 70px;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95));
+      display: flex;
+      align-items: center;
+      color: #f9fafb;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-kicker span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #38bdf8, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: #cbd5f5;
+      font-size: 0.98rem;
+      max-width: 550px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-badge strong {
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-stats {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-stats-item strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #e5e7eb;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 1.2rem;
+      padding: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-chip {
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.6rem;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .hero-chip span:first-child {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-chip span:last-child {
+      font-weight: 600;
+      color: #e5e7eb;
+      font-size: 0.8rem;
+    }
+
+    .hero-note {
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      padding-top: 0.8rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 620px;
+      margin: 0.2rem auto 0;
+    }
+
+    /* ABOUT */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .about-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .about-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+      font-weight: 700;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .about-item {
+      padding: 0.7rem;
+      border-radius: 0.7rem;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .about-item strong {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.7rem;
+      margin-top: 0.6rem;
+    }
+
+    /* SERVICES */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .card ul {
+      margin-top: 0.4rem;
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* PROPERTIES */
+    .properties-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-select {
+      background: #020617;
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .property-card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+    }
+
+    .property-img {
+      height: 150px;
+      background: linear-gradient(135deg, #1d4ed8, #9333ea);
+    }
+
+    .property-body {
+      padding: 0.9rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .property-location {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .property-meta {
+      margin-top: 0.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .property-meta span {
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .property-price {
+      margin-top: 0.4rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .property-footer {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.74rem;
+    }
+
+    /* HIGHLIGHTS & PROCESS */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    .highlight {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .process-step {
+      background: var(--card-bg);
+      border-radius: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    .step-index {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    .testimonial {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial strong {
+      display: block;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.8rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-info-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .whatsapp-cta {
+      margin-top: 1rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 0.8rem;
+      background: #022c22;
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      color: #ccfbf1;
+      font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      background: #020617;
+      padding: 1.3rem 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    /* ========================= */
+    /* LIGHT / DARK THEME TOGGLE */
+    /* ========================= */
+    body.dark-theme {
+      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      color: var(--text);
+    }
+
+    body.light-theme {
+      background: radial-gradient(circle at top, #e5edf7 0, #f5f7fb 50%, #ffffff 100%);
+      color: #0f172a;
+    }
+
+    body.light-theme header {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom-color: #e2e8f0;
+    }
+
+    body.light-theme .hero-overlay {
+      background: radial-gradient(circle at top, rgba(241,245,249,0.8), rgba(226,232,240,0.95));
+      color: #0f172a;
+    }
+
+    body.light-theme .hero-text {
+      color: #4b5563;
+    }
+
+    body.light-theme .hero-badge {
+      background: #ffffff;
+      border-color: #e2e8f0;
+    }
+
+    body.light-theme .card,
+    body.light-theme .about-card,
+    body.light-theme .hero-card,
+    body.light-theme form,
+    body.light-theme .highlight,
+    body.light-theme .process-step,
+    body.light-theme .testimonial,
+    body.light-theme .property-card {
+      background: #ffffff;
+      border-color: #e2e8f0;
+    }
+
+    body.light-theme section:nth-of-type(even) {
+      background: #f8fafc;
+    }
+
+    body.light-theme footer {
+      background: #ffffff;
+      border-top-color: #e2e8f0;
+    }
+
+    body.light-theme .theme-toggle {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    body.light-theme .badge-tag,
+    body.light-theme .pill,
+    body.light-theme .filter-select {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+      color: #0f172a;
+    }
+
+    body.light-theme .section-sub,
+    body.light-theme .about-text,
+    body.light-theme .contact-info,
+    body.light-theme .hero-note,
+    body.light-theme .property-location,
+    body.light-theme .property-meta span {
+      color: #64748b;
+    }
+
+    body.light-theme input,
+    body.light-theme select,
+    body.light-theme textarea {
+      background: #ffffff;
+      border-color: #d4d4d8;
+      color: #0f172a;
+    }
+
+    body.light-theme .whatsapp-cta {
+      background: #ecfeff;
+      border-color: #22c55e33;
+      color: #0f172a;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        height: auto;
+        min-height: 90vh;
+      }
+
+      .hero-overlay {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cards-3,
+      .property-grid,
+      .highlights-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        padding: 0.75rem 1.5rem 1rem;
+        background: rgba(5, 8, 20, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards-3,
+      .property-grid,
+      .highlights-grid,
+      .testimonials,
+      .process-steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-stats {
+        gap: 1.1rem;
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<!-- نبدأ بالوضع الليلي كافتراضي -->
+<body class="dark-theme">
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark">MG</div>
+          <div>
+            <div>MANA GLOBAL</div>
+            <small style="font-size: 0.65rem; color: #9ca3af;">
+              Real Estate · Project Marketing · Export
+            </small>
+          </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#hero" data-i18n="nav.home" class="active-nav">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#properties" data-i18n="nav.properties">Properties</a>
+          <a href="#invest" data-i18n="nav.investment">Investment</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <div class="lang-switcher">
+              <button class="lang-btn active" data-lang="en">EN</button>
+              <button class="lang-btn" data-lang="ar">AR</button>
+              <button class="lang-btn" data-lang="tr">TR</button>
+            </div>
+
+            <!-- زر الليل/النهار -->
+            <button class="theme-toggle" id="themeToggle" title="Dark / Light">
+              🌙
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO WITH VIDEO -->
+  <section id="hero" class="hero">
+    <!-- 🔹 الخيار 1: إذا أعدت تسمية الملف إلى intro.mp4 في نفس مجلد index.html -->
+    <video id="heroVideo" autoplay muted loop playsinline>
+      <source src="intro.mp4" type="video/mp4" />
+      <!-- 🔹 إذا أردت استخدام الاسم الأصلي، علّق السطر الأعلى وافتح هذا:
+      <source src="WhatsApp Video 2025-11-28 at 10.14.50 AM.mp4" type="video/mp4" />
+      -->
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span class="dot"></span>
+              <span data-i18n="hero.kicker">Trusted Investment Partner in Türkiye</span>
+            </div>
+            <h1 class="hero-title">
+              <span data-i18n="hero.title1">Global real estate</span>
+              <span class="hero-highlight" data-i18n="hero.title2">
+                tailored for investors
+              </span>
+            </h1>
+            <p class="hero-text" data-i18n="hero.text">
+              MANA GLOBAL connects you with carefully selected projects across Türkiye and beyond, with full legal
+              support, transparent pricing, and structured investment plans for families and investors.
+            </p>
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge1.title">Real Estate</strong>
+                <span data-i18n="hero.badge1.text">Residential · Commercial · Lands</span>
+              </div>
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge2.title">Project Marketing</strong>
+                <span data-i18n="hero.badge2.text">From launch to sell-out</span>
+              </div>
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge3.title">Export</strong>
+                <span data-i18n="hero.badge3.text">Türkiye to GCC & global</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#properties" class="btn btn-primary" data-i18n="hero.cta1">Browse key projects</a>
+              <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Book free consultation</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stats-item">
+                <strong>150+</strong>
+                <span data-i18n="hero.stat1">Units reserved by GCC investors</span>
+              </div>
+              <div class="hero-stats-item">
+                <strong>12</strong>
+                <span data-i18n="hero.stat2">Cities covered in Türkiye</span>
+              </div>
+              <div class="hero-stats-item">
+                <strong>24/7</strong>
+                <span data-i18n="hero.stat3">Follow-up & after-sales service</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="hero-card">
+              <div class="hero-card-title" data-i18n="hero.form.title">
+                Quick investment overview
+              </div>
+              <div class="hero-card-grid">
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.country.label">Preferred country</span>
+                  <span data-i18n="hero.form.country.value">Türkiye · Istanbul focus</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.budget.label">Budget range</span>
+                  <span>$150K – $750K</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.goal.label">Main goal</span>
+                  <span data-i18n="hero.form.goal.value">Passive income + capital growth</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.type.label">Investor type</span>
+                  <span data-i18n="hero.form.type.value">Family · Business owner · High-net-worth</span>
+                </div>
+              </div>
+              <div class="hero-note" data-i18n="hero.form.note">
+                Share your details at the bottom of the page and our team will send you a customized investment portfolio
+                within 24 hours.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- باقي الأقسام كما في النسخة السابقة (ABOUT / SERVICES / PROPERTIES / INVEST / TESTIMONIALS / CONTACT / FOOTER) -->
+  <!-- للحفاظ على التركيز على مشكلة الفيديو والثيم، أبقيت نفس المحتوى السابق بدون تغيير جوهري -->
+
+  <!-- مثال بسيط لصحة النهاية: فقط أضع سكشن واحد إضافي + الفوتر، أنت عندك النسخة الكاملة السابقة تستطيع دمجها كما هي. -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="about.kicker">About MANA GLOBAL</div>
+        <h2 class="section-title" data-i18n="about.title">Your bridge between opportunity and execution</h2>
+        <p class="section-sub" data-i18n="about.sub">
+          We combine deep local knowledge in Türkiye with GCC investor expectations, delivering legally safe,
+          financially sound, and operationally smooth real estate and export deals.
+        </p>
+      </div>
+      <!-- ... يمكنك هنا لصق نفس grid-2 و باقي الكروت من الكود السابق ... -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-flex">
+      <div data-i18n="footer.copy">
+        © <span id="year"></span> MANA GLOBAL. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#hero" data-i18n="footer.backToTop">Back to top</a>
+        <a href="#services" data-i18n="footer.services">Services</a>
+        <a href="#properties" data-i18n="footer.properties">Properties</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // MOBILE NAV
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("navLinks");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+    navLinks.querySelectorAll("a[href^='#']").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    // ACTIVE NAV ON SCROLL
+    const sections = document.querySelectorAll("section[id]");
+    const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const top = window.scrollY;
+        const offset = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        if (top >= offset && top < offset + height) current = section.id;
+      });
+      navAnchors.forEach((a) => {
+        a.classList.toggle("active-nav", a.getAttribute("href") === "#" + current);
+      });
+    });
+
+    // SIMPLE FILTER (لو أضفت سكشن العقارات من النسخة السابقة)
+    const cityFilter = document.getElementById("cityFilter");
+    const profileFilter = document.getElementById("profileFilter");
+    const propertyCards = document.querySelectorAll(".property-card");
+
+    if (cityFilter && profileFilter && propertyCards.length > 0) {
+      function applyFilters() {
+        const city = cityFilter.value;
+        const profile = profileFilter.value;
+        propertyCards.forEach((card) => {
+          const cardCity = card.getAttribute("data-city");
+          const cardProfile = card.getAttribute("data-profile");
+          const cityMatch = city === "all" || cardCity === city;
+          const profileMatch = profile === "all" || cardProfile === profile;
+          card.style.display = cityMatch && profileMatch ? "flex" : "none";
+        });
+      }
+      cityFilter.addEventListener("change", applyFilters);
+      profileFilter.addEventListener("change", applyFilters);
+    }
+
+    // ========================
+    // THEME TOGGLE (LIGHT/DARK)
+    // ========================
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      body.classList.remove("light-theme", "dark-theme");
+      body.classList.add(theme + "-theme");
+      localStorage.setItem("theme", theme);
+
+      if (theme === "dark") {
+        themeToggle.textContent = "🌙";
+      } else {
+        themeToggle.textContent = "☀️";
+      }
+    }
+
+    let savedTheme = localStorage.getItem("theme");
+    if (!savedTheme) {
+      savedTheme =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+    }
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener("click", () => {
+      const newTheme = body.classList.contains("dark-theme") ? "light" : "dark";
+      applyTheme(newTheme);
+    });
+
+    // ========================
+    // VIDEO AUTOPLAY FIX
+    // ========================
+    const heroVideo = document.getElementById("heroVideo");
+    if (heroVideo) {
+      // محاولة تشغيل الفيديو برمجياً (بعض المتصفحات تمنعه إلا إذا كان مكتوماً)
+      window.addEventListener("load", () => {
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // لو المتصفح رفض التشغيل التلقائي، نضيف حدث عند أول نقرة على الصفحة
+            const enablePlay = () => {
+              heroVideo.play().catch(() => {});
+              document.removeEventListener("click", enablePlay);
+            };
+            document.addEventListener("click", enablePlay);
+          });
+        }
+      });
+    }
+
+    // ==============
+    // i18n DATA (EN فقط كمثال؛ يمكنك لصق قاموس AR/TR الكامل من الرد السابق إذا أردت)
+    // ==============
+    const translations = {
+      en: {
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.services": "Services",
+        "nav.properties": "Properties",
+        "nav.investment": "Investment",
+        "nav.contact": "Contact",
+        "hero.kicker": "Trusted Investment Partner in Türkiye",
+        "hero.title1": "Global real estate",
+        "hero.title2": "tailored for investors",
+        "hero.text":
+          "MANA GLOBAL connects you with carefully selected projects across Türkiye and beyond, with full legal support, transparent pricing, and structured investment plans for families and investors.",
+        "hero.badge1.title": "Real Estate",
+        "hero.badge1.text": "Residential · Commercial · Lands",
+        "hero.badge2.title": "Project Marketing",
+        "hero.badge2.text": "From launch to sell-out",
+        "hero.badge3.title": "Export",
+        "hero.badge3.text": "Türkiye to GCC & global",
+        "hero.cta1": "Browse key projects",
+        "hero.cta2": "Book free consultation",
+        "hero.stat1": "Units reserved by GCC investors",
+        "hero.stat2": "Cities covered in Türkiye",
+        "hero.stat3": "Follow-up & after-sales service",
+        "hero.form.title": "Quick investment overview",
+        "hero.form.country.label": "Preferred country",
+        "hero.form.country.value": "Türkiye · Istanbul focus",
+        "hero.form.budget.label": "Budget range",
+        "hero.form.goal.label": "Main goal",
+        "hero.form.goal.value": "Passive income + capital growth",
+        "hero.form.type.label": "Investor type",
+        "hero.form.type.value": "Family · Business owner · High-net-worth",
+        "hero.form.note":
+          "Share your details at the bottom of the page and our team will send you a customized investment portfolio within 24 hours.",
+        "about.kicker": "About MANA GLOBAL",
+        "about.title": "Your bridge between opportunity and execution",
+        "about.sub":
+          "We combine deep local knowledge in Türkiye with GCC investor expectations, delivering legally safe, financially sound, and operationally smooth real estate and export deals.",
+        "footer.copy":
+          "© " + new Date().getFullYear() + " MANA GLOBAL. All rights reserved.",
+        "footer.backToTop": "Back to top",
+        "footer.services": "Services",
+        "footer.properties": "Properties"
+      },
+      ar: {
+        "nav.home": "الرئيسية",
+        "nav.about": "من نحن",
+        "nav.services": "الخدمات",
+        "nav.properties": "العقارات",
+        "nav.investment": "الاستثمار",
+        "nav.contact": "تواصل معنا",
+        "hero.kicker": "شريكك الموثوق للاستثمار في تركيا",
+        "hero.title1": "عقارات عالمية",
+        "hero.title2": "مصممة خصيصًا للمستثمرين",
+        "hero.text":
+          "تربطك MANA GLOBAL بمشاريع مختارة بعناية في تركيا وخارجها، مع إشراف قانوني كامل، وتسعير شفاف، وخطط استثمار منظمة للعائلات والمستثمرين.",
+        "hero.badge1.title": "العقارات",
+        "hero.badge1.text": "سكني · تجاري · أراضٍ",
+        "hero.badge2.title": "تسويق المشاريع",
+        "hero.badge2.text": "من الإطلاق حتى اكتمال البيع",
+        "hero.badge3.title": "التصدير",
+        "hero.badge3.text": "من تركيا إلى الخليج والعالم",
+        "hero.cta1": "استعراض المشاريع المميزة",
+        "hero.cta2": "احجز استشارة مجانية",
+        "hero.stat1": "وحدات حجزها مستثمرون من الخليج",
+        "hero.stat2": "مدن نغطيها داخل تركيا",
+        "hero.stat3": "متابعة وخدمة ما بعد البيع 24/7",
+        "hero.form.title": "لمحة سريعة عن استثمارك",
+        "hero.form.country.label": "الدولة المفضلة",
+        "hero.form.country.value": "تركيا · تركيز على إسطنبول",
+        "hero.form.budget.label": "نطاق الميزانية",
+        "hero.form.goal.label": "الهدف الرئيسي",
+        "hero.form.goal.value": "دخل إيجاري + نمو في رأس المال",
+        "hero.form.type.label": "نوع المستثمر",
+        "hero.form.type.value": "عائلة · صاحب عمل · مستثمر عالي الملاءة",
+        "hero.form.note":
+          "شاركنا بياناتك في نموذج التواصل أسفل الصفحة، وسيصلك مقترح استثماري مخصص خلال 24 ساعة.",
+        "about.kicker": "عن MANA GLOBAL",
+        "about.title": "جسر بين الفرصة والتنفيذ",
+        "about.sub":
+          "نجمع بين المعرفة العميقة بالسوق التركي وتوقعات المستثمر الخليجي، لنقدم صفقات عقارية وتجارية آمنة قانونيًا، قوية ماليًا، وسلسة في التنفيذ.",
+        "footer.copy":
+          "© " + new Date().getFullYear() + " MANA GLOBAL. جميع الحقوق محفوظة.",
+        "footer.backToTop": "الرجوع للأعلى",
+        "footer.services": "الخدمات",
+        "footer.properties": "العقارات"
+      },
+      tr: {
+        "nav.home": "Ana Sayfa",
+        "nav.about": "Hakkımızda",
+        "nav.services": "Hizmetler",
+        "nav.properties": "Projeler",
+        "nav.investment": "Yatırım",
+        "nav.contact": "İletişim",
+        "hero.kicker": "Türkiye’de güvenilir yatırım ortağınız",
+        "hero.title1": "Küresel gayrimenkul",
+        "hero.title2": "yatırımcıya özel tasarlandı",
+        "hero.text":
+          "MANA GLOBAL, Türkiye’de ve seçili pazarlarda hukuki olarak güvenli, şeffaf fiyatlı ve planlı yatırım projelerini yatırımcılar ve aileler ile buluşturur.",
+        "hero.badge1.title": "Gayrimenkul",
+        "hero.badge1.text": "Konut · Ticari · Arsa",
+        "hero.badge2.title": "Proje Pazarlama",
+        "hero.badge2.text": "Lansmandan satış kapanışına kadar",
+        "hero.badge3.title": "İhracat",
+        "hero.badge3.text": "Türkiye’den Körfez’e ve dünyaya",
+        "hero.cta1": "Öne çıkan projelere göz at",
+        "hero.cta2": "Ücretsiz danışmanlık al",
+        "hero.stat1": "Körfez yatırımcıları için ayrılan ünite sayısı",
+        "hero.stat2": "Türkiye’de kapsanan şehirler",
+        "hero.stat3": "Satış sonrası ve takip hizmeti",
+        "hero.form.title": "Hızlı yatırım özeti",
+        "hero.form.country.label": "Tercih edilen ülke",
+        "hero.form.country.value": "Türkiye · İstanbul odaklı",
+        "hero.form.budget.label": "Bütçe aralığı",
+        "hero.form.goal.label": "Ana hedef",
+        "hero.form.goal.value": "Kira geliri + sermaye artışı",
+        "hero.form.type.label": "Yatırımcı tipi",
+        "hero.form.type.value": "Aile · İş insanı · Yüksek gelir grubu",
+        "hero.form.note":
+          "Sayfanın altındaki formu doldurun, 24 saat içinde size özel yatırım portföyü paylaşalım.",
+        "about.kicker": "MANA GLOBAL Hakkında",
+        "about.title": "Fırsat ile uygulama arasındaki köprünüz",
+        "about.sub":
+          "Türkiye pazar bilgisini Körfez yatırımcı beklentileriyle birleştirerek, hukuki açıdan güvenli ve finansal açıdan güçlü gayrimenkul ve ticaret işlemleri sunuyoruz.",
+        "footer.copy":
+          "© " + new Date().getFullYear() + " MANA GLOBAL. Tüm hakları saklıdır.",
+        "footer.backToTop": "Başa dön",
+        "footer.services": "Hizmetler",
+        "footer.properties": "Projeler"
+      }
+    };
+
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const i18nElems = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(lang) {
+      const dict = translations[lang] || translations.en;
+
+      i18nElems.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      langButtons.forEach((btn) =>
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang)
+      );
+
+      if (lang === "ar") {
+        document.documentElement.lang = "ar";
+        document.documentElement.dir = "rtl";
+      } else {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = "ltr";
+      }
+    }
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        setLanguage(lang);
+      });
+    });
+
+    setLanguage("en");
+  </script>
+</body>
+</html>

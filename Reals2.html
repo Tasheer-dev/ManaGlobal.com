@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MANA GLOBAL – Real Estate | Project Marketing | Export</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --primary: #1c7ed6;
+      --primary-dark: #14508a;
+      --accent: #f5a623;
+      --bg: #050814;
+      --bg-light: #0b1020;
+      --text: #f5f5f5;
+      --muted: #a8b2c1;
+      --card-bg: #10172f;
+      --border: #1b2238;
+      --danger: #e03131;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 8, 20, 0.95);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #4dabf7, #1c7ed6 40%, #111827 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 0 25px rgba(29, 78, 216, 0.75);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active-nav {
+      color: var(--text);
+      border-bottom-color: var(--primary);
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      border-radius: 999px;
+      padding: 2px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* HERO VIDEO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 70px;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95));
+      display: flex;
+      align-items: center;
+      color: #f9fafb;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-kicker span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #38bdf8, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: #cbd5f5;
+      font-size: 0.98rem;
+      max-width: 550px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-badge strong {
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-stats {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-stats-item strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #e5e7eb;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 1.2rem;
+      padding: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-chip {
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.6rem;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .hero-chip span:first-child {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-chip span:last-child {
+      font-weight: 600;
+      color: #e5e7eb;
+      font-size: 0.8rem;
+    }
+
+    .hero-note {
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      padding-top: 0.8rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 620px;
+      margin: 0.2rem auto 0;
+    }
+
+    /* ABOUT */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .about-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .about-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+      font-weight: 700;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .about-item {
+      padding: 0.7rem;
+      border-radius: 0.7rem;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .about-item strong {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.7rem;
+      margin-top: 0.6rem;
+    }
+
+    /* SERVICES */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .card ul {
+      margin-top: 0.4rem;
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* PROPERTIES */
+    .properties-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-select {
+      background: #020617;
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .property-card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+    }
+
+    .property-img {
+      height: 150px;
+      background: linear-gradient(135deg, #1d4ed8, #9333ea);
+    }
+
+    .property-body {
+      padding: 0.9rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .property-location {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .property-meta {
+      margin-top: 0.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .property-meta span {
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .property-price {
+      margin-top: 0.4rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .property-footer {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.74rem;
+    }
+
+    /* HIGHLIGHTS & PROCESS */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    .highlight {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .process-step {
+      background: var(--card-bg);
+      border-radius: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    .step-index {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    .testimonial {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial strong {
+      display: block;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.8rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-info-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .whatsapp-cta {
+      margin-top: 1rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 0.8rem;
+      background: #022c22;
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      color: #ccfbf1;
+      font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      background: #020617;
+      padding: 1.3rem 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        height: auto;
+        min-height: 90vh;
+      }
+
+      .hero-overlay {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cards-3,
+      .property-grid,
+      .highlights-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        padding: 0.75rem 1.5rem 1rem;
+        background: rgba(5, 8, 20, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards-3,
+      .property-grid,
+      .highlights-grid,
+      .testimonials,
+      .process-steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-stats {
+        gap: 1.1rem;
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark">MG</div>
+          <div>
+            <div>MANA GLOBAL</div>
+            <small style="font-size: 0.65rem; color: #9ca3af;">
+              Real Estate · Project Marketing · Export
+            </small>
+          </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#hero" data-i18n="nav.home" class="active-nav">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#properties" data-i18n="nav.properties">Properties</a>
+          <a href="#invest" data-i18n="nav.investment">Investment</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+            <button class="lang-btn" data-lang="tr">TR</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO WITH VIDEO -->
+  <section id="hero" class="hero">
+    <!-- 🔹 غيّر مسار src للفيديو ليطابق ملفك -->
+    <video autoplay muted loop playsinline>
+      <source src="intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span class="dot"></span>
+              <span data-i18n="hero.kicker">Trusted Investment Partner in Türkiye</span>
+            </div>
+            <h1 class="hero-title">
+              <span data-i18n="hero.title1">Global real estate</span>
+              <span class="hero-highlight" data-i18n="hero.title2">
+                tailored for investors
+              </span>
+            </h1>
+            <p class="hero-text" data-i18n="hero.text">
+              MANA GLOBAL connects you with carefully selected projects across Türkiye and beyond, with full
+              legal support, transparent pricing, and structured investment plans for families and investors.
+            </p>
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge1.title">Real Estate</strong>
+                <span data-i18n="hero.badge1.text">Residential · Commercial · Lands</span>
+              </div>
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge2.title">Project Marketing</strong>
+                <span data-i18n="hero.badge2.text">From launch to sell-out</span>
+              </div>
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge3.title">Export</strong>
+                <span data-i18n="hero.badge3.text">Türkiye to GCC & global</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#properties" class="btn btn-primary" data-i18n="hero.cta1">Browse key projects</a>
+              <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Book free consultation</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stats-item">
+                <strong>150+</strong>
+                <span data-i18n="hero.stat1">Units reserved by GCC investors</span>
+              </div>
+              <div class="hero-stats-item">
+                <strong>12</strong>
+                <span data-i18n="hero.stat2">Cities covered in Türkiye</span>
+              </div>
+              <div class="hero-stats-item">
+                <strong>24/7</strong>
+                <span data-i18n="hero.stat3">Follow-up & after-sales service</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="hero-card">
+              <div class="hero-card-title" data-i18n="hero.form.title">
+                Quick investment overview
+              </div>
+              <div class="hero-card-grid">
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.country.label">Preferred country</span>
+                  <span data-i18n="hero.form.country.value">Türkiye · Istanbul focus</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.budget.label">Budget range</span>
+                  <span>$150K – $750K</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.goal.label">Main goal</span>
+                  <span data-i18n="hero.form.goal.value">Passive income + capital growth</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.type.label">Investor type</span>
+                  <span data-i18n="hero.form.type.value">Family · Business owner · High-net-worth</span>
+                </div>
+              </div>
+              <div class="hero-note" data-i18n="hero.form.note">
+                Share your details at the bottom of the page and our team will send you a customized investment
+                portfolio within 24 hours.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="about.kicker">About MANA GLOBAL</div>
+        <h2 class="section-title" data-i18n="about.title">Your bridge between opportunity and execution</h2>
+        <p class="section-sub" data-i18n="about.sub">
+          We combine deep local knowledge in Türkiye with GCC investor expectations, delivering legally safe,
+          financially sound, and operationally smooth real estate and export deals.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="about-card">
+          <div class="about-pill" data-i18n="about.pill">Who we are</div>
+          <h3 class="about-title" data-i18n="about.card1.title">
+            A focused partner for cross-border real estate and trade
+          </h3>
+          <p class="about-text" data-i18n="about.card1.text">
+            MANA GLOBAL is a boutique advisory and execution house based in Türkiye, serving investors, families,
+            and businesses from the GCC and around the world. We specialize in real estate acquisition,
+            project marketing, and international export.
+          </p>
+          <div class="about-highlights">
+            <div class="about-item">
+              <strong data-i18n="about.card1.item1.title">Real estate expertise</strong>
+              <span data-i18n="about.card1.item1.text">
+                Pre-checked projects, due diligence, and full legal supervision.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.card1.item2.title">Project marketing</strong>
+              <span data-i18n="about.card1.item2.text">
+                From branding to sales operations for developers and partners.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.card1.item3.title">Export operations</strong>
+              <span data-i18n="about.card1.item3.text">
+                Product sourcing, factory link, logistics, and quality follow-up.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.card1.item4.title">GCC investor focus</strong>
+              <span data-i18n="about.card1.item4.text">
+                Clear communication, Sharia-conscious options, and family safety.
+              </span>
+            </div>
+          </div>
+          <div class="badge-tag" data-i18n="about.card1.tag">
+            Licensed local partners · Legal offices · Developer network
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-pill" data-i18n="about.card2.pill">How we work</div>
+          <h3 class="about-title" data-i18n="about.card2.title">Transparency, selection, and long-term care</h3>
+          <p class="about-text" data-i18n="about.card2.text">
+            We don’t push random offers. We shortlist projects, visit them physically, verify legal status, and
+            build a clear financial model so you understand exactly what you are buying — and why.
+          </p>
+          <div class="about-highlights">
+            <div class="about-item">
+              <strong data-i18n="about.card2.item1.title">End-to-end journey</strong>
+              <span data-i18n="about.card2.item1.text">
+                From airport pickup to title deed (Tapu) and after-sales service.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.card2.item2.title">Risk-managed</strong>
+              <span data-i18n="about.card2.item2.text">
+                Focus on reputable developers and transparent payment plans.
+              </span>
+            </div>
+          </div>
+          <div class="badge-tag" data-i18n="about.card2.tag">
+            Your file is followed by a dedicated account manager in your language.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="services.kicker">Services</div>
+        <h2 class="section-title" data-i18n="services.title">
+          Three pillars designed around your growth
+        </h2>
+        <p class="section-sub" data-i18n="services.sub">
+          From securing a family home to structuring a full international expansion, our teams support you with
+          execution, not just advice.
+        </p>
+      </div>
+
+      <div class="cards-3">
+        <div class="card">
+          <h3 data-i18n="services.real.title">Real Estate Advisory & Brokerage</h3>
+          <p data-i18n="services.real.text">
+            Tailored property selection in Türkiye and select markets, focused on legally safe assets and long-term
+            value.
+          </p>
+          <ul>
+            <li data-i18n="services.real.li1">Residential, commercial, and land opportunities</li>
+            <li data-i18n="services.real.li2">Citizenship-linked and residency-eligible options</li>
+            <li data-i18n="services.real.li3">Rent management & local operator network</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="services.marketing.title">Project Marketing & Sales for Developers</h3>
+          <p data-i18n="services.marketing.text">
+            We partner with developers to position, brand, and sell projects to regional and international buyers.
+          </p>
+          <ul>
+            <li data-i18n="services.marketing.li1">Go-to-market strategy and pricing</li>
+            <li data-i18n="services.marketing.li2">Digital campaigns and sales funnels</li>
+            <li data-i18n="services.marketing.li3">Sales team training and closing support</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="services.export.title">Export & Trade Facilitation</h3>
+          <p data-i18n="services.export.text">
+            For companies seeking quality products from Türkiye, we manage sourcing, negotiation, and logistics.
+          </p>
+          <ul>
+            <li data-i18n="services.export.li1">Factory sourcing and quality checks</li>
+            <li data-i18n="services.export.li2">Contracts, shipping, and documentation</li>
+            <li data-i18n="services.export.li3">Long-term supplier relationship management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section id="properties">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="properties.kicker">Featured Properties</div>
+        <h2 class="section-title" data-i18n="properties.title">
+          Curated projects for GCC and international investors
+        </h2>
+        <p class="section-sub" data-i18n="properties.sub">
+          The following sample projects reflect our typical selection standards. Your final portfolio is tailored
+          to your budget, risk appetite, and family needs.
+        </p>
+      </div>
+
+      <div class="properties-header">
+        <p style="font-size:0.8rem; color:var(--muted);" data-i18n="properties.filterText">
+          Filter by city and investment profile:
+        </p>
+        <div class="filter-group">
+          <select id="cityFilter" class="filter-select">
+            <option value="all" data-i18n="properties.filter.allCities">All cities</option>
+            <option value="istanbul">Istanbul</option>
+            <option value="antalya">Antalya</option>
+            <option value="bursa">Bursa</option>
+          </select>
+          <select id="profileFilter" class="filter-select">
+            <option value="all" data-i18n="properties.filter.allProfiles">All profiles</option>
+            <option value="family" data-i18n="properties.filter.family">Family living</option>
+            <option value="rental" data-i18n="properties.filter.rental">High rental yield</option>
+            <option value="luxury" data-i18n="properties.filter.luxury">Luxury</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="property-grid" id="propertyGrid">
+        <!-- Property 1 -->
+        <article class="property-card" data-city="istanbul" data-profile="family">
+          <div class="property-img"></div>
+          <div class="property-body">
+            <div class="property-location">
+              Istanbul · Kagithane
+            </div>
+            <h3 style="font-size:0.95rem;" data-i18n="properties.p1.title">
+              Family residences 10 minutes from Vadi Istanbul
+            </h3>
+            <div class="property-meta">
+              <span data-i18n="properties.p1.meta1">2+1 · 3+1 · 4+1 layouts</span>
+              <span data-i18n="properties.p1.meta2">Delivery in 12–18 months</span>
+              <span data-i18n="properties.p1.meta3">Installments up to 36 months</span>
+            </div>
+            <div class="property-price" data-i18n="properties.p1.price">
+              Starting from $230,000
+            </div>
+            <div class="property-footer">
+              <span class="pill" data-i18n="properties.p1.pill">Ideal for families & residency</span>
+              <span data-i18n="properties.p1.foot">Expected ROI: 25–35% in 3 years</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property 2 -->
+        <article class="property-card" data-city="antalya" data-profile="rental">
+          <div class="property-img" style="background:linear-gradient(135deg,#0ea5e9,#22c55e);"></div>
+          <div class="property-body">
+            <div class="property-location">
+              Antalya · Konyaaltı
+            </div>
+            <h3 style="font-size:0.95rem;" data-i18n="properties.p2.title">
+              Serviced apartments near the beach
+            </h3>
+            <div class="property-meta">
+              <span data-i18n="properties.p2.meta1">1+1 · 2+1 units</span>
+              <span data-i18n="properties.p2.meta2">Operator-managed rentals</span>
+              <span data-i18n="properties.p2.meta3">Touristic license available</span>
+            </div>
+            <div class="property-price" data-i18n="properties.p2.price">
+              Starting from $160,000
+            </div>
+            <div class="property-footer">
+              <span class="pill" data-i18n="properties.p2.pill">Daily/short-term rental focus</span>
+              <span data-i18n="properties.p2.foot">Gross yield targets: 8–10%/year</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property 3 -->
+        <article class="property-card" data-city="istanbul" data-profile="luxury">
+          <div class="property-img" style="background:linear-gradient(135deg,#f59e0b,#a855f7);"></div>
+          <div class="property-body">
+            <div class="property-location">
+              Istanbul · Bosphorus View
+            </div>
+            <h3 style="font-size:0.95rem;" data-i18n="properties.p3.title">
+              Limited luxury collection with sea views
+            </h3>
+            <div class="property-meta">
+              <span data-i18n="properties.p3.meta1">High-end finishing</span>
+              <span data-i18n="properties.p3.meta2">Concierge & security</span>
+              <span data-i18n="properties.p3.meta3">Cash & structured deals</span>
+            </div>
+            <div class="property-price" data-i18n="properties.p3.price">
+              Starting from $650,000
+            </div>
+            <div class="property-footer">
+              <span class="pill" data-i18n="properties.p3.pill">Suites VIP and UHNW clients</span>
+              <span data-i18n="properties.p3.foot">Discreet files on request</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTMENT & PROCESS -->
+  <section id="invest">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="invest.kicker">Investment & Process</div>
+        <h2 class="section-title" data-i18n="invest.title">
+          We de-risk the journey and keep you in control
+        </h2>
+        <p class="section-sub" data-i18n="invest.sub">
+          Our frameworks are built for families and investors who want clarity, not surprises — from first call
+          until after you receive the keys.
+        </p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="highlight">
+          <strong data-i18n="invest.h1.title">Legal & compliance checks</strong>
+          <p data-i18n="invest.h1.text">
+            Project documentation, licenses, tapu status, and developer credibility are verified before we show
+            you the opportunity.
+          </p>
+        </div>
+        <div class="highlight">
+          <strong data-i18n="invest.h2.title">Financial modeling</strong>
+          <p data-i18n="invest.h2.text">
+            We simulate scenarios for payments, rent potential, and exit strategies so you understand realistic
+            outcomes.
+          </p>
+        </div>
+        <div class="highlight">
+          <strong data-i18n="invest.h3.title">After-sales & property care</strong>
+          <p data-i18n="invest.h3.text">
+            Furniture packages, rent-out support, and on-ground follow-up so your asset remains productive, not
+            just parked.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem;">
+        <h3 style="font-size:1.1rem; margin-bottom:0.6rem;" data-i18n="invest.processTitle">
+          Your journey step-by-step
+        </h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-index">1</div>
+            <strong data-i18n="invest.step1.title">Discovery call</strong>
+            <p data-i18n="invest.step1.text">
+              Understanding your goals, budget, and preferred timeline for investment or export.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-index">2</div>
+            <strong data-i18n="invest.step2.title">Shortlist & analysis</strong>
+            <p data-i18n="invest.step2.text">
+              We present a curated shortlist with numbers, risks, and clear recommendations.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-index">3</div>
+            <strong data-i18n="invest.step3.title">Site visit & selection</strong>
+            <p data-i18n="invest.step3.text">
+              On-ground tours, virtual calls, and direct meetings with developers or factories.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-index">4</div>
+            <strong data-i18n="invest.step4.title">Contracts & follow-up</strong>
+            <p data-i18n="invest.step4.text">
+              Legal signatures, payment monitoring, and continuous updates until full delivery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="testimonials.kicker">Testimonials</div>
+        <h2 class="section-title" data-i18n="testimonials.title">
+          What our clients say
+        </h2>
+        <p class="section-sub" data-i18n="testimonials.sub">
+          Many of our clients come from referrals — families and investors who experienced a calm, structured,
+          and transparent process.
+        </p>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <p data-i18n="testimonials.t1.text">
+            “We were worried about buying in another country. MANA GLOBAL prepared everything from A to Z, and
+            even helped us rent the apartment after delivery.”
+          </p>
+          <strong data-i18n="testimonials.t1.name">Family from Riyadh</strong>
+          <span style="font-size:0.78rem;" data-i18n="testimonials.t1.meta">
+            Istanbul · Residential project
+          </span>
+        </div>
+        <div class="testimonial">
+          <p data-i18n="testimonials.t2.text">
+            “As a business owner I needed both property and product export from Türkiye. They coordinated factory
+            visits, negotiations, and shipment without delays.”
+          </p>
+          <strong data-i18n="testimonials.t2.name">Entrepreneur from Dubai</strong>
+          <span style="font-size:0.78rem;" data-i18n="testimonials.t2.meta">
+            Export + commercial property
+          </span>
+        </div>
+        <div class="testimonial">
+          <p data-i18n="testimonials.t3.text">
+            “Clear communication in our language, realistic numbers, and no pressure. This is why we brought our
+            relatives to invest through the same team.”
+          </p>
+          <strong data-i18n="testimonials.t3.name">Investor group</strong>
+          <span style="font-size:0.78rem;" data-i18n="testimonials.t3.meta">
+            Multi-unit investment portfolio
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="contact.kicker">Contact</div>
+        <h2 class="section-title" data-i18n="contact.title">
+          Share your plan — we’ll build the file around it
+        </h2>
+        <p class="section-sub" data-i18n="contact.sub">
+          Fill the form below or message us via WhatsApp. A dedicated account manager will contact you within 24
+          hours in Arabic, English, or Turkish.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="contact.form.nameLabel">Full name</label>
+              <input id="name" type="text" data-i18n-placeholder="contact.form.namePlaceholder" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="contact.form.phoneLabel">WhatsApp number</label>
+              <input id="phone" type="text" data-i18n-placeholder="contact.form.phonePlaceholder" placeholder="+966..." />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="country" data-i18n="contact.form.countryLabel">Country of residence</label>
+              <input id="country" type="text" data-i18n-placeholder="contact.form.countryPlaceholder" placeholder="Saudi Arabia, UAE, Qatar..." />
+            </div>
+            <div class="form-group">
+              <label for="budget" data-i18n="contact.form.budgetLabel">Approximate budget</label>
+              <select id="budget">
+                <option value="" data-i18n="contact.form.budgetPlaceholder">Select budget range</option>
+                <option>$150K – $250K</option>
+                <option>$250K – $500K</option>
+                <option>$500K – $1M</option>
+                <option>$1M+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="goal" data-i18n="contact.form.goalLabel">Main goal</label>
+            <select id="goal">
+              <option value="" data-i18n="contact.form.goalPlaceholder">Select your main goal</option>
+              <option data-i18n="contact.form.goal1">Family home & residency</option>
+              <option data-i18n="contact.form.goal2">Pure investment & rental income</option>
+              <option data-i18n="contact.form.goal3">Export & product sourcing</option>
+              <option data-i18n="contact.form.goal4">Other (explain below)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-i18n="contact.form.messageLabel">Additional details</label>
+            <textarea id="message" data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="Tell us more about your plan, timeline, and preferred cities."></textarea>
+          </div>
+
+          <button type="button" class="btn btn-primary" style="width:100%; margin-top:0.4rem;" data-i18n="contact.form.submit">
+            Send request (demo – connect manually)
+          </button>
+
+          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.5rem;" data-i18n="contact.form.note">
+            This form is for demo purposes in this prototype. Connect it to your CRM or email system on your server.
+          </p>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-label" data-i18n="contact.info.office">Main office – Türkiye</div>
+            <div>Istanbul, Türkiye</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-label" data-i18n="contact.info.email">Email</div>
+            <div>info@managlobal.com</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-label" data-i18n="contact.info.phone">Phone & WhatsApp</div>
+            <div>+90 5XX XXX XX XX</div>
+          </div>
+
+          <div class="whatsapp-cta" data-i18n="contact.info.whatsapp">
+            Prefer WhatsApp? Send us a voice note with your name, country, budget, and main goal — we’ll reply
+            with a personalized plan and project suggestions.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-flex">
+      <div data-i18n="footer.copy">
+        © <span id="year"></span> MANA GLOBAL. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#hero" data-i18n="footer.backToTop">Back to top</a>
+        <a href="#services" data-i18n="footer.services">Services</a>
+        <a href="#properties" data-i18n="footer.properties">Properties</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // MOBILE NAV
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("navLinks");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+    navLinks.querySelectorAll("a[href^='#']").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    // ACTIVE NAV ON SCROLL
+    const sections = document.querySelectorAll("section[id]");
+    const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const top = window.scrollY;
+        const offset = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        if (top >= offset && top < offset + height) current = section.id;
+      });
+      navAnchors.forEach((a) => {
+        a.classList.toggle("active-nav", a.getAttribute("href") === "#" + current);
+      });
+    });
+
+    // SIMPLE FILTER
+    const cityFilter = document.getElementById("cityFilter");
+    const profileFilter = document.getElementById("profileFilter");
+    const propertyCards = document.querySelectorAll(".property-card");
+
+    function applyFilters() {
+      const city = cityFilter.value;
+      const profile = profileFilter.value;
+      propertyCards.forEach((card) => {
+        const cardCity = card.getAttribute("data-city");
+        const cardProfile = card.getAttribute("data-profile");
+        const cityMatch = city === "all" || cardCity === city;
+        const profileMatch = profile === "all" || cardProfile === profile;
+        card.style.display = cityMatch && profileMatch ? "flex" : "none";
+      });
+    }
+
+    cityFilter.addEventListener("change", applyFilters);
+    profileFilter.addEventListener("change", applyFilters);
+
+    // i18n DATA
+    const translations = {
+      en: {
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.services": "Services",
+        "nav.properties": "Properties",
+        "nav.investment": "Investment",
+        "nav.contact": "Contact",
+
+        "hero.kicker": "Trusted Investment Partner in Türkiye",
+        "hero.title1": "Global real estate",
+        "hero.title2": "tailored for investors",
+        "hero.text":
+          "MANA GLOBAL connects you with carefully selected projects across Türkiye and beyond, with full legal support, transparent pricing, and structured investment plans for families and investors.",
+        "hero.badge1.title": "Real Estate",
+        "hero.badge1.text": "Residential · Commercial · Lands",
+        "hero.badge2.title": "Project Marketing",
+        "hero.badge2.text": "From launch to sell-out",
+        "hero.badge3.title": "Export",
+        "hero.badge3.text": "Türkiye to GCC & global",
+        "hero.cta1": "Browse key projects",
+        "hero.cta2": "Book free consultation",
+        "hero.stat1": "Units reserved by GCC investors",
+        "hero.stat2": "Cities covered in Türkiye",
+        "hero.stat3": "Follow-up & after-sales service",
+
+        "hero.form.title": "Quick investment overview",
+        "hero.form.country.label": "Preferred country",
+        "hero.form.country.value": "Türkiye · Istanbul focus",
+        "hero.form.budget.label": "Budget range",
+        "hero.form.goal.label": "Main goal",
+        "hero.form.goal.value": "Passive income + capital growth",
+        "hero.form.type.label": "Investor type",
+        "hero.form.type.value": "Family · Business owner · High-net-worth",
+        "hero.form.note":
+          "Share your details at the bottom of the page and our team will send you a customized investment portfolio within 24 hours.",
+
+        "about.kicker": "About MANA GLOBAL",
+        "about.title": "Your bridge between opportunity and execution",
+        "about.sub":
+          "We combine deep local knowledge in Türkiye with GCC investor expectations, delivering legally safe, financially sound, and operationally smooth real estate and export deals.",
+        "about.pill": "Who we are",
+        "about.card1.title": "A focused partner for cross-border real estate and trade",
+        "about.card1.text":
+          "MANA GLOBAL is a boutique advisory and execution house based in Türkiye, serving investors, families, and businesses from the GCC and around the world. We specialize in real estate acquisition, project marketing, and international export.",
+        "about.card1.item1.title": "Real estate expertise",
+        "about.card1.item1.text":
+          "Pre-checked projects, due diligence, and full legal supervision.",
+        "about.card1.item2.title": "Project marketing",
+        "about.card1.item2.text":
+          "From branding to sales operations for developers and partners.",
+        "about.card1.item3.title": "Export operations",
+        "about.card1.item3.text":
+          "Product sourcing, factory link, logistics, and quality follow-up.",
+        "about.card1.item4.title": "GCC investor focus",
+        "about.card1.item4.text":
+          "Clear communication, Sharia-conscious options, and family safety.",
+        "about.card1.tag": "Licensed local partners · Legal offices · Developer network",
+
+        "about.card2.pill": "How we work",
+        "about.card2.title": "Transparency, selection, and long-term care",
+        "about.card2.text":
+          "We don’t push random offers. We shortlist projects, visit them physically, verify legal status, and build a clear financial model so you understand exactly what you are buying — and why.",
+        "about.card2.item1.title": "End-to-end journey",
+        "about.card2.item1.text":
+          "From airport pickup to title deed (Tapu) and after-sales service.",
+        "about.card2.item2.title": "Risk-managed",
+        "about.card2.item2.text":
+          "Focus on reputable developers and transparent payment plans.",
+        "about.card2.tag":
+          "Your file is followed by a dedicated account manager in your language.",
+
+        "services.kicker": "Services",
+        "services.title": "Three pillars designed around your growth",
+        "services.sub":
+          "From securing a family home to structuring a full international expansion, our teams support you with execution, not just advice.",
+        "services.real.title": "Real Estate Advisory & Brokerage",
+        "services.real.text":
+          "Tailored property selection in Türkiye and select markets, focused on legally safe assets and long-term value.",
+        "services.real.li1": "Residential, commercial, and land opportunities",
+        "services.real.li2": "Citizenship-linked and residency-eligible options",
+        "services.real.li3": "Rent management & local operator network",
+        "services.marketing.title": "Project Marketing & Sales for Developers",
+        "services.marketing.text":
+          "We partner with developers to position, brand, and sell projects to regional and international buyers.",
+        "services.marketing.li1": "Go-to-market strategy and pricing",
+        "services.marketing.li2": "Digital campaigns and sales funnels",
+        "services.marketing.li3": "Sales team training and closing support",
+        "services.export.title": "Export & Trade Facilitation",
+        "services.export.text":
+          "For companies seeking quality products from Türkiye, we manage sourcing, negotiation, and logistics.",
+        "services.export.li1": "Factory sourcing and quality checks",
+        "services.export.li2": "Contracts, shipping, and documentation",
+        "services.export.li3": "Long-term supplier relationship management",
+
+        "properties.kicker": "Featured Properties",
+        "properties.title": "Curated projects for GCC and international investors",
+        "properties.sub":
+          "The following sample projects reflect our typical selection standards. Your final portfolio is tailored to your budget, risk appetite, and family needs.",
+        "properties.filterText": "Filter by city and investment profile:",
+        "properties.filter.allCities": "All cities",
+        "properties.filter.allProfiles": "All profiles",
+        "properties.filter.family": "Family living",
+        "properties.filter.rental": "High rental yield",
+        "properties.filter.luxury": "Luxury",
+
+        "properties.p1.title": "Family residences 10 minutes from Vadi Istanbul",
+        "properties.p1.meta1": "2+1 · 3+1 · 4+1 layouts",
+        "properties.p1.meta2": "Delivery in 12–18 months",
+        "properties.p1.meta3": "Installments up to 36 months",
+        "properties.p1.price": "Starting from $230,000",
+        "properties.p1.pill": "Ideal for families & residency",
+        "properties.p1.foot": "Expected ROI: 25–35% in 3 years",
+
+        "properties.p2.title": "Serviced apartments near the beach",
+        "properties.p2.meta1": "1+1 · 2+1 units",
+        "properties.p2.meta2": "Operator-managed rentals",
+        "properties.p2.meta3": "Touristic license available",
+        "properties.p2.price": "Starting from $160,000",
+        "properties.p2.pill": "Daily/short-term rental focus",
+        "properties.p2.foot": "Gross yield targets: 8–10%/year",
+
+        "properties.p3.title": "Limited luxury collection with sea views",
+        "properties.p3.meta1": "High-end finishing",
+        "properties.p3.meta2": "Concierge & security",
+        "properties.p3.meta3": "Cash & structured deals",
+        "properties.p3.price": "Starting from $650,000",
+        "properties.p3.pill": "Suites VIP and UHNW clients",
+        "properties.p3.foot": "Discreet files on request",
+
+        "invest.kicker": "Investment & Process",
+        "invest.title": "We de-risk the journey and keep you in control",
+        "invest.sub":
+          "Our frameworks are built for families and investors who want clarity, not surprises — from first call until after you receive the keys.",
+        "invest.h1.title": "Legal & compliance checks",
+        "invest.h1.text":
+          "Project documentation, licenses, tapu status, and developer credibility are verified before we show you the opportunity.",
+        "invest.h2.title": "Financial modeling",
+        "invest.h2.text":
+          "We simulate scenarios for payments, rent potential, and exit strategies so you understand realistic outcomes.",
+        "invest.h3.title": "After-sales & property care",
+        "invest.h3.text":
+          "Furniture packages, rent-out support, and on-ground follow-up so your asset remains productive, not just parked.",
+        "invest.processTitle": "Your journey step-by-step",
+        "invest.step1.title": "Discovery call",
+        "invest.step1.text":
+          "Understanding your goals, budget, and preferred timeline for investment or export.",
+        "invest.step2.title": "Shortlist & analysis",
+        "invest.step2.text":
+          "We present a curated shortlist with numbers, risks, and clear recommendations.",
+        "invest.step3.title": "Site visit & selection",
+        "invest.step3.text":
+          "On-ground tours, virtual calls, and direct meetings with developers or factories.",
+        "invest.step4.title": "Contracts & follow-up",
+        "invest.step4.text":
+          "Legal signatures, payment monitoring, and continuous updates until full delivery.",
+
+        "testimonials.kicker": "Testimonials",
+        "testimonials.title": "What our clients say",
+        "testimonials.sub":
+          "Many of our clients come from referrals — families and investors who experienced a calm, structured, and transparent process.",
+        "testimonials.t1.text":
+          "“We were worried about buying in another country. MANA GLOBAL prepared everything from A to Z, and even helped us rent the apartment after delivery.”",
+        "testimonials.t1.name": "Family from Riyadh",
+        "testimonials.t1.meta": "Istanbul · Residential project",
+        "testimonials.t2.text":
+          "“As a business owner I needed both property and product export from Türkiye. They coordinated factory visits, negotiations, and shipment without delays.”",
+        "testimonials.t2.name": "Entrepreneur from Dubai",
+        "testimonials.t2.meta": "Export + commercial property",
+        "testimonials.t3.text":
+          "“Clear communication in our language, realistic numbers, and no pressure. This is why we brought our relatives to invest through the same team.”",
+        "testimonials.t3.name": "Investor group",
+        "testimonials.t3.meta": "Multi-unit investment portfolio",
+
+        "contact.kicker": "Contact",
+        "contact.title": "Share your plan — we’ll build the file around it",
+        "contact.sub":
+          "Fill the form below or message us via WhatsApp. A dedicated account manager will contact you within 24 hours in Arabic, English, or Turkish.",
+        "contact.form.nameLabel": "Full name",
+        "contact.form.namePlaceholder": "Your full name",
+        "contact.form.phoneLabel": "WhatsApp number",
+        "contact.form.phonePlaceholder": "+966...",
+        "contact.form.countryLabel": "Country of residence",
+        "contact.form.countryPlaceholder": "Saudi Arabia, UAE, Qatar...",
+        "contact.form.budgetLabel": "Approximate budget",
+        "contact.form.budgetPlaceholder": "Select budget range",
+        "contact.form.goalLabel": "Main goal",
+        "contact.form.goalPlaceholder": "Select your main goal",
+        "contact.form.goal1": "Family home & residency",
+        "contact.form.goal2": "Pure investment & rental income",
+        "contact.form.goal3": "Export & product sourcing",
+        "contact.form.goal4": "Other (explain below)",
+        "contact.form.messageLabel": "Additional details",
+        "contact.form.messagePlaceholder":
+          "Tell us more about your plan, timeline, and preferred cities.",
+        "contact.form.submit": "Send request (demo – connect manually)",
+        "contact.form.note":
+          "This form is for demo purposes in this prototype. Connect it to your CRM or email system on your server.",
+
+        "contact.info.office": "Main office – Türkiye",
+        "contact.info.email": "Email",
+        "contact.info.phone": "Phone & WhatsApp",
+        "contact.info.whatsapp":
+          "Prefer WhatsApp? Send us a voice note with your name, country, budget, and main goal — we’ll reply with a personalized plan and project suggestions.",
+
+        "footer.copy": "© " + new Date().getFullYear() + " MANA GLOBAL. All rights reserved.",
+        "footer.backToTop": "Back to top",
+        "footer.services": "Services",
+        "footer.properties": "Properties"
+      },
+
+      // ARABIC
+      ar: {
+        "nav.home": "الرئيسية",
+        "nav.about": "من نحن",
+        "nav.services": "الخدمات",
+        "nav.properties": "العقارات",
+        "nav.investment": "الاستثمار",
+        "nav.contact": "تواصل معنا",
+
+        "hero.kicker": "شريكك الموثوق للاستثمار في تركيا",
+        "hero.title1": "عقارات عالمية",
+        "hero.title2": "مصممة خصيصًا للمستثمرين",
+        "hero.text":
+          "تربطك MANA GLOBAL بمشاريع مختارة بعناية في تركيا وخارجها، مع إشراف قانوني كامل، وتسعير شفاف، وخطط استثمار منظمة للعائلات والمستثمرين.",
+        "hero.badge1.title": "العقارات",
+        "hero.badge1.text": "سكني · تجاري · أراضٍ",
+        "hero.badge2.title": "تسويق المشاريع",
+        "hero.badge2.text": "من الإطلاق حتى اكتمال البيع",
+        "hero.badge3.title": "التصدير",
+        "hero.badge3.text": "من تركيا إلى الخليج والعالم",
+        "hero.cta1": "استعراض المشاريع المميزة",
+        "hero.cta2": "احجز استشارة مجانية",
+        "hero.stat1": "وحدات حجزها مستثمرون من الخليج",
+        "hero.stat2": "مدن نغطيها داخل تركيا",
+        "hero.stat3": "متابعة وخدمة ما بعد البيع 24/7",
+
+        "hero.form.title": "لمحة سريعة عن استثمارك",
+        "hero.form.country.label": "الدولة المفضلة",
+        "hero.form.country.value": "تركيا · تركيز على إسطنبول",
+        "hero.form.budget.label": "نطاق الميزانية",
+        "hero.form.goal.label": "الهدف الرئيسي",
+        "hero.form.goal.value": "دخل إيجاري + نمو في رأس المال",
+        "hero.form.type.label": "نوع المستثمر",
+        "hero.form.type.value": "عائلة · صاحب عمل · مستثمر عالي الملاءة",
+        "hero.form.note":
+          "شاركنا بياناتك في نموذج التواصل أسفل الصفحة، وسيصلك مقترح استثماري مخصص خلال 24 ساعة.",
+
+        "about.kicker": "عن MANA GLOBAL",
+        "about.title": "جسر بين الفرصة والتنفيذ",
+        "about.sub":
+          "نجمع بين المعرفة العميقة بالسوق التركي وتوقعات المستثمر الخليجي، لنقدم صفقات عقارية وتجارية آمنة قانونيًا، قوية ماليًا، وسلسة في التنفيذ.",
+        "about.pill": "من نحن",
+        "about.card1.title": "شريك متخصص في العقار والتجارة عبر الحدود",
+        "about.card1.text":
+          "تعمل MANA GLOBAL كمكتب استشاري وتنفيذي في تركيا، يخدم المستثمرين والأسر والشركات من دول الخليج والعالم، مع تركيز على التملك العقاري، وتسويق المشاريع، والتصدير.",
+        "about.card1.item1.title": "خبرة عقارية",
+        "about.card1.item1.text": "مشاريع مفحوصة مسبقًا مع تدقيق قانوني كامل.",
+        "about.card1.item2.title": "تسويق مشاريع",
+        "about.card1.item2.text":
+          "من بناء الهوية والتسعير إلى تشغيل فريق المبيعات للمطورين والشركاء.",
+        "about.card1.item3.title": "عمليات التصدير",
+        "about.card1.item3.text":
+          "اختيار المنتجات، التواصل مع المصانع، اللوجستيات، والمتابعة على الجودة.",
+        "about.card1.item4.title": "تركيز على المستثمر الخليجي",
+        "about.card1.item4.text":
+          "تواصل واضح، خيارات تراعي الضوابط الشرعية، واهتمام بأمان الأسرة.",
+        "about.card1.tag": "شركاء محليون مرخَّصون · مكاتب قانونية · شبكة مطورين",
+
+        "about.card2.pill": "آلية العمل",
+        "about.card2.title": "شفافية في الطرح، انتقاء في الاختيار، ورعاية طويلة الأمد",
+        "about.card2.text":
+          "لا نعرض عليك عروضًا عشوائية؛ بل نقوم بترشيح مشاريع محددة، زيارتها ميدانيًا، والتحقق من وضعها القانوني، ثم نبني نموذجًا ماليًا واضحًا حتى تعرف بالضبط ماذا تشتري ولماذا.",
+        "about.card2.item1.title": "رحلة متكاملة",
+        "about.card2.item1.text":
+          "من الاستقبال في المطار حتى استلام الطابو وخدمة ما بعد البيع.",
+        "about.card2.item2.title": "إدارة للمخاطر",
+        "about.card2.item2.text":
+          "تركيز على مطورين موثوقين وخطط سداد واضحة وشفافة.",
+        "about.card2.tag": "ملفك يتابعه مدير حساب يتحدث لغتك من البداية حتى النهاية.",
+
+        "services.kicker": "الخدمات",
+        "services.title": "ثلاثة محاور مصممة لنمو استثمارك",
+        "services.sub":
+          "من تأمين منزل عائلي حتى بناء خطة توسع دولية، ندعمك في التنفيذ وليس في الاستشارة النظرية فقط.",
+        "services.real.title": "الاستشارات والوساطة العقارية",
+        "services.real.text":
+          "اختيار عقاري مخصص في تركيا وأسواق مختارة، مع التركيز على الأصول الآمنة قانونيًا وعالية القيمة.",
+        "services.real.li1": "فرص سكنية وتجارية وأراضٍ",
+        "services.real.li2": "خيارات مرتبطة بالإقامة أو الجنسية (حيثما تنطبق)",
+        "services.real.li3": "إدارة التأجير وشبكة مشغّلين محليين",
+        "services.marketing.title": "تسويق وبيع المشاريع للمطورين",
+        "services.marketing.text":
+          "نتعاون مع المطورين لبناء هوية المشروع، وتحديد تسعيره، وبيعه للمشترين الإقليميين والدوليين.",
+        "services.marketing.li1": "استراتيجية دخول السوق والتسعير",
+        "services.marketing.li2": "حملات رقمية وقنوات مبيعات فعّالة",
+        "services.marketing.li3": "تدريب فرق المبيعات ودعم الإغلاق",
+        "services.export.title": "التصدير وتيسير التجارة",
+        "services.export.text":
+          "للشركات التي تبحث عن منتجات تركية ذات جودة، ندير اختيار الموردين، والتفاوض، والشحن.",
+        "services.export.li1": "اختيار المصانع وفحص الجودة",
+        "services.export.li2": "العقود، والشحن، والمستندات الرسمية",
+        "services.export.li3": "بناء علاقة توريد طويلة الأمد",
+
+        "properties.kicker": "عقارات مختارة",
+        "properties.title": "مشاريع منسّقة لمستثمري الخليج والعالم",
+        "properties.sub":
+          "المشاريع أدناه أمثلة تعكس مستوى الاختيار المعتاد لدينا؛ يتم بناء محفظتك النهائية حسب ميزانيتك ودرجة تحملك للمخاطر واحتياجات أسرتك.",
+        "properties.filterText": "فلتر حسب المدينة ونوع الاستثمار:",
+        "properties.filter.allCities": "كل المدن",
+        "properties.filter.allProfiles": "كل الأنماط",
+        "properties.filter.family": "سكن عائلي",
+        "properties.filter.rental": "عائد إيجاري مرتفع",
+        "properties.filter.luxury": "فئة فاخرة",
+
+        "properties.p1.title": "مجمع عائلي على بعد 10 دقائق من وادي إسطنبول",
+        "properties.p1.meta1": "مساحات 2+1 · 3+1 · 4+1",
+        "properties.p1.meta2": "تسليم خلال 12–18 شهرًا",
+        "properties.p1.meta3": "أقساط حتى 36 شهرًا",
+        "properties.p1.price": "الأسعار تبدأ من 230,000 دولار",
+        "properties.p1.pill": "مثالي للعائلات والإقامة",
+        "properties.p1.foot": "عائد متوقع 25–35٪ خلال 3 سنوات",
+
+        "properties.p2.title": "شقق مخدومة بالقرب من البحر",
+        "properties.p2.meta1": "وحدات 1+1 · 2+1",
+        "properties.p2.meta2": "إدارة تشغيل وتأجير محترفة",
+        "properties.p2.meta3": "إمكانية رخصة سياحية",
+        "properties.p2.price": "الأسعار تبدأ من 160,000 دولار",
+        "properties.p2.pill": "مناسب للتأجير اليومي والقصير",
+        "properties.p2.foot": "أهداف عائد إجمالي 8–10٪ سنويًا",
+
+        "properties.p3.title": "مجموعة فاخرة محدودة بإطلالات بحرية",
+        "properties.p3.meta1": "تشطيبات عالية الجودة",
+        "properties.p3.meta2": "خدمات كونسييرج وحراسة",
+        "properties.p3.meta3": "خيارات دفع نقدي وهيكلي",
+        "properties.p3.price": "الأسعار تبدأ من 650,000 دولار",
+        "properties.p3.pill": "مناسب للعملاء المميزين وذوي الملاءة العالية",
+        "properties.p3.foot": "تفاصيل خاصة عند الطلب",
+
+        "invest.kicker": "الاستثمار وآلية العمل",
+        "invest.title": "نقلل المخاطر ونُبقي القرار في يدك",
+        "invest.sub":
+          "أطر العمل لدينا مصممة للعائلات والمستثمرين الذين يبحثون عن وضوح كامل في الرحلة من أول اتصال حتى ما بعد استلام المفتاح.",
+        "invest.h1.title": "فحص قانوني وامتثالي",
+        "invest.h1.text":
+          "نراجع مستندات المشروع، والتراخيص، ووضع الطابو، وموثوقية المطور قبل عرض الفرصة عليك.",
+        "invest.h2.title": "نماذج مالية واقعية",
+        "invest.h2.text":
+          "نحاكي سيناريوهات الدفع، والعائد الإيجاري، وخطط الخروج، لتفهم النتائج المتوقعة بصورة عملية.",
+        "invest.h3.title": "خدمة ما بعد البيع وإدارة الأصل",
+        "invest.h3.text":
+          "حزم تأثيث، ودعم التأجير، ومتابعة ميدانية حتى يبقى العقار منتجًا وليس مجرد أصل مجمّد.",
+        "invest.processTitle": "رحلتك خطوة بخطوة",
+        "invest.step1.title": "اتصال تعريفي",
+        "invest.step1.text":
+          "فهم أهدافك، وميزانيتك، والمدة الزمنية المفضلة للاستثمار أو التصدير.",
+        "invest.step2.title": "ترشيح وتحليل",
+        "invest.step2.text":
+          "نشاركك قائمة مختارة من الفرص مع الأرقام والمخاطر والتوصيات الواضحة.",
+        "invest.step3.title": "زيارة واختيار المشروع",
+        "invest.step3.text":
+          "جولات ميدانية أو افتراضية، ولقاءات مباشرة مع المطورين أو المصانع.",
+        "invest.step4.title": "التعاقد والمتابعة",
+        "invest.step4.text":
+          "توقيع العقود، متابعة الدفعات، وتزويدك بتحديثات مستمرة حتى التسليم الكامل.",
+
+        "testimonials.kicker": "آراء العملاء",
+        "testimonials.title": "ماذا يقول عملاؤنا؟",
+        "testimonials.sub":
+          "أغلب عملائنا يصلوننا عن طريق التوصية؛ لأنهم عاشوا تجربة هادئة ومنظمة وشفافة.",
+        "testimonials.t1.text":
+          "“كنا متخوفين من الشراء في بلد آخر، لكن MANA GLOBAL رتبت كل شيء من الألف إلى الياء، وساعدونا في تأجير الشقة بعد الاستلام.”",
+        "testimonials.t1.name": "أسرة من الرياض",
+        "testimonials.t1.meta": "إسطنبول · مشروع سكني",
+        "testimonials.t2.text":
+          "“كرجل أعمال كنت أحتاج إلى عقار تجاري بالإضافة لتصدير منتجات من تركيا، وهم نسقوا الزيارات للمصانع والتفاوض والشحن بدون تأخير.”",
+        "testimonials.t2.name": "رائد أعمال من دبي",
+        "testimonials.t2.meta": "تصدير + عقار تجاري",
+        "testimonials.t3.text":
+          "“تواصل واضح بلغتنا، أرقام واقعية، وعدم ضغط في القرار؛ لهذا السبب أحضرنا أقاربنا ليستثمروا عبر نفس الفريق.”",
+        "testimonials.t3.name": "مجموعة مستثمرين",
+        "testimonials.t3.meta": "محفظة استثمارية متعددة الوحدات",
+
+        "contact.kicker": "تواصل معنا",
+        "contact.title": "شاركنا خطتك لنَبني عليها ملفًا متكاملًا",
+        "contact.sub":
+          "املأ النموذج أو راسلنا عبر الواتساب، وسيقوم مدير حساب مخصص بالتواصل معك خلال 24 ساعة بالعربية أو الإنجليزية أو التركية.",
+        "contact.form.nameLabel": "الاسم الكامل",
+        "contact.form.namePlaceholder": "اكتب اسمك الكامل",
+        "contact.form.phoneLabel": "رقم الواتساب",
+        "contact.form.phonePlaceholder": "+966...",
+        "contact.form.countryLabel": "دولة الإقامة",
+        "contact.form.countryPlaceholder": "السعودية، الإمارات، قطر...",
+        "contact.form.budgetLabel": "الميزانية التقريبية",
+        "contact.form.budgetPlaceholder": "اختر نطاق الميزانية",
+        "contact.form.goalLabel": "الهدف الرئيسي",
+        "contact.form.goalPlaceholder": "اختر الهدف الرئيسي",
+        "contact.form.goal1": "منزل عائلي وإقامة",
+        "contact.form.goal2": "استثمار بحت ودخل إيجاري",
+        "contact.form.goal3": "تصدير وبحث عن منتجات",
+        "contact.form.goal4": "أخرى (وضح في الأسفل)",
+        "contact.form.messageLabel": "تفاصيل إضافية",
+        "contact.form.messagePlaceholder":
+          "اخبرنا عن خطتك، والمدة الزمنية المتوقعة، والمدن المفضلة لديك.",
+        "contact.form.submit": "إرسال الطلب (نموذج تجريبي)",
+        "contact.form.note":
+          "هذا النموذج للتجربة فقط؛ قم بربطه بنظام البريد أو الـ CRM الخاص بك على الخادم.",
+
+        "contact.info.office": "المكتب الرئيسي – تركيا",
+        "contact.info.email": "البريد الإلكتروني",
+        "contact.info.phone": "الهاتف والواتساب",
+        "contact.info.whatsapp":
+          "تفضّل الواتساب؟ أرسل لنا رسالة صوتية بالاسم، والدولة، والميزانية، والهدف الرئيسي، وسنرد عليك بخطة ومشاريع مقترحة.",
+
+        "footer.copy":
+          "© " + new Date().getFullYear() + " MANA GLOBAL. جميع الحقوق محفوظة.",
+        "footer.backToTop": "الرجوع للأعلى",
+        "footer.services": "الخدمات",
+        "footer.properties": "العقارات"
+      },
+
+      // TURKISH
+      tr: {
+        "nav.home": "Ana Sayfa",
+        "nav.about": "Hakkımızda",
+        "nav.services": "Hizmetler",
+        "nav.properties": "Projeler",
+        "nav.investment": "Yatırım",
+        "nav.contact": "İletişim",
+
+        "hero.kicker": "Türkiye’de güvenilir yatırım ortağınız",
+        "hero.title1": "Küresel gayrimenkul",
+        "hero.title2": "yatırımcıya özel tasarlandı",
+        "hero.text":
+          "MANA GLOBAL, Türkiye’de ve seçili pazarlarda hukuki olarak güvenli, şeffaf fiyatlı ve planlı yatırım projelerini yatırımcılar ve aileler ile buluşturur.",
+        "hero.badge1.title": "Gayrimenkul",
+        "hero.badge1.text": "Konut · Ticari · Arsa",
+        "hero.badge2.title": "Proje Pazarlama",
+        "hero.badge2.text": "Lansmandan satış kapanışına kadar",
+        "hero.badge3.title": "İhracat",
+        "hero.badge3.text": "Türkiye’den Körfez’e ve dünyaya",
+        "hero.cta1": "Öne çıkan projelere göz at",
+        "hero.cta2": "Ücretsiz danışmanlık al",
+        "hero.stat1": "Körfez yatırımcıları için ayrılan ünite sayısı",
+        "hero.stat2": "Türkiye’de kapsanan şehirler",
+        "hero.stat3": "Satış sonrası ve takip hizmeti",
+
+        "hero.form.title": "Hızlı yatırım özeti",
+        "hero.form.country.label": "Tercih edilen ülke",
+        "hero.form.country.value": "Türkiye · İstanbul odaklı",
+        "hero.form.budget.label": "Bütçe aralığı",
+        "hero.form.goal.label": "Ana hedef",
+        "hero.form.goal.value": "Kira geliri + sermaye artışı",
+        "hero.form.type.label": "Yatırımcı tipi",
+        "hero.form.type.value": "Aile · İş insanı · Yüksek gelir grubu",
+        "hero.form.note":
+          "Sayfanın altındaki formu doldurun, 24 saat içinde size özel yatırım portföyü paylaşalım.",
+
+        "about.kicker": "MANA GLOBAL Hakkında",
+        "about.title": "Fırsat ile uygulama arasındaki köprünüz",
+        "about.sub":
+          "Türkiye pazar bilgisini Körfez yatırımcı beklentileriyle birleştirerek, hukuki açıdan güvenli ve finansal açıdan güçlü gayrimenkul ve ticaret işlemleri sunuyoruz.",
+        "about.pill": "Biz kimiz?",
+        "about.card1.title": "Sınır ötesi gayrimenkul ve ticarette uzman ortak",
+        "about.card1.text":
+          "MANA GLOBAL, Türkiye merkezli butik bir danışmanlık ve uygulama ofisidir. Körfez ve dünyanın farklı ülkelerinden yatırımcı, aile ve şirketlere hizmet verir.",
+        "about.card1.item1.title": "Gayrimenkul uzmanlığı",
+        "about.card1.item1.text":
+          "Ön incelemesi yapılmış projeler ve tam hukuki denetim.",
+        "about.card1.item2.title": "Proje pazarlama",
+        "about.card1.item2.text":
+          "Marka konumlandırma, fiyatlama ve satış operasyonları.",
+        "about.card1.item3.title": "İhracat operasyonları",
+        "about.card1.item3.text":
+          "Ürün seçimi, fabrika bağlantısı, lojistik ve kalite takibi.",
+        "about.card1.item4.title": "Körfez odaklı yaklaşım",
+        "about.card1.item4.text":
+          "Açık iletişim, hassasiyetlere uygun seçenekler ve aile güvenliği.",
+        "about.card1.tag": "Lisanslı yerel ortaklar · Hukuk ofisleri · Geliştirici ağı",
+
+        "about.card2.pill": "Nasıl çalışıyoruz?",
+        "about.card2.title": "Şeffaflık, seçicilik ve uzun vadeli ilişki",
+        "about.card2.text":
+          "Rastgele teklif sunmuyoruz; projeleri seçip yerinde ziyaret ediyor, hukuki durumunu kontrol ediyor, ardından net finansal model oluşturuyoruz.",
+        "about.card2.item1.title": "Uçtan uca yolculuk",
+        "about.card2.item1.text":
+          "Havalimanı karşılama, tapu teslimi ve satış sonrası hizmet.",
+        "about.card2.item2.title": "Risk yönetimi",
+        "about.card2.item2.text":
+          "Güvenilir geliştiriciler ve şeffaf ödeme planlarına odaklanıyoruz.",
+        "about.card2.tag":
+          "Dosyanız, baştan sona dilinizi konuşan özel bir müşteri temsilcisi tarafından takip edilir.",
+
+        "services.kicker": "Hizmetler",
+        "services.title": "Büyümenize göre tasarlanmış üç ana alan",
+        "services.sub":
+          "Aile konutu edinmekten uluslararası genişleme planına kadar, sadece tavsiye değil; uygulama desteği sunuyoruz.",
+        "services.real.title": "Gayrimenkul Danışmanlık ve Aracılık",
+        "services.real.text":
+          "Türkiye ve seçili pazarlarda hukuken güvenli, uzun vadeli değer sunan gayrimenkullere odaklanıyoruz.",
+        "services.real.li1": "Konut, ticari gayrimenkul ve arsa fırsatları",
+        "services.real.li2": "Oturum veya vatandaşlıkla bağlantılı seçenekler",
+        "services.real.li3": "Kira yönetimi ve yerel işletmeci ağı",
+        "services.marketing.title": "Geliştiriciler için Proje Pazarlama ve Satış",
+        "services.marketing.text":
+          "Projeleri bölgesel ve uluslararası alıcılara sunmak için geliştiricilerle ortaklık kuruyoruz.",
+        "services.marketing.li1": "Pazara giriş stratejisi ve fiyatlama",
+        "services.marketing.li2": "Dijital kampanyalar ve satış tünelleri",
+        "services.marketing.li3": "Satış ekibi eğitimi ve kapanış desteği",
+        "services.export.title": "İhracat ve Ticaret Kolaylaştırma",
+        "services.export.text":
+          "Türkiye’den kaliteli ürün arayan şirketler için tedarik, pazarlık ve lojistiği yönetiyoruz.",
+        "services.export.li1": "Fabrika seçimi ve kalite kontrolleri",
+        "services.export.li2": "Sözleşmeler, sevkiyat ve evrak yönetimi",
+        "services.export.li3": "Uzun vadeli tedarikçi ilişkileri",
+
+        "properties.kicker": "Öne Çıkan Projeler",
+        "properties.title": "Körfez ve uluslararası yatırımcılara uygun projeler",
+        "properties.sub":
+          "Aşağıdaki projeler, seçim standartlarımızı örneklemek içindir. Son portföyünüz bütçenize, risk iştahınıza ve aile ihtiyaçlarınıza göre hazırlanır.",
+        "properties.filterText": "Şehre ve yatırım profilinize göre filtreleyin:",
+        "properties.filter.allCities": "Tüm şehirler",
+        "properties.filter.allProfiles": "Tüm profiller",
+        "properties.filter.family": "Aile yaşamı",
+        "properties.filter.rental": "Yüksek kira getirisi",
+        "properties.filter.luxury": "Lüks",
+
+        "properties.p1.title": "Vadi İstanbul’a 10 dakika mesafede aile konutları",
+        "properties.p1.meta1": "2+1 · 3+1 · 4+1 daire tipleri",
+        "properties.p1.meta2": "12–18 ay içinde teslim",
+        "properties.p1.meta3": "36 aya kadar taksit",
+        "properties.p1.price": "Başlangıç fiyatı: 230.000 $",
+        "properties.p1.pill": "Aile ve oturum için ideal",
+        "properties.p1.foot": "3 yılda %25–35 getiri hedefi",
+
+        "properties.p2.title": "Plaja yakın hizmetli daireler",
+        "properties.p2.meta1": "1+1 · 2+1 daireler",
+        "properties.p2.meta2": "Profesyonel kiralama işletmesi",
+        "properties.p2.meta3": "Turistik lisans imkânı",
+        "properties.p2.price": "Başlangıç fiyatı: 160.000 $",
+        "properties.p2.pill": "Günlük / kısa dönem kiralama odaklı",
+        "properties.p2.foot": "Hedef brüt getiri: %8–10 / yıl",
+
+        "properties.p3.title": "Deniz manzaralı sınırlı lüks koleksiyon",
+        "properties.p3.meta1": "Üst düzey iç mimari ve malzeme",
+        "properties.p3.meta2": "Concierge ve güvenlik hizmetleri",
+        "properties.p3.meta3": "Nakit veya yapılandırılmış ödeme seçenekleri",
+        "properties.p3.price": "Başlangıç fiyatı: 650.000 $",
+        "properties.p3.pill": "VIP ve yüksek gelir grubu müşteriler için",
+        "properties.p3.foot": "Detaylı dosyalar talep üzerine",
+
+        "invest.kicker": "Yatırım ve Süreç",
+        "invest.title": "Riskleri azaltır, kontrolü sizde tutarız",
+        "invest.sub":
+          "Süreçlerimiz, ilk görüşmeden anahtar teslimine kadar sürpriz değil, netlik isteyen aileler ve yatırımcılar için tasarlanmıştır.",
+        "invest.h1.title": "Hukuki ve uyum kontrolleri",
+        "invest.h1.text":
+          "Proje belgeleri, lisanslar, tapu durumu ve geliştirici güvenilirliği sunum öncesi kontrol edilir.",
+        "invest.h2.title": "Finansal modelleme",
+        "invest.h2.text":
+          "Ödeme planları, kira potansiyeli ve çıkış stratejileri için senaryolar simüle edilir.",
+        "invest.h3.title": "Satış sonrası ve varlık yönetimi",
+        "invest.h3.text":
+          "Mobilya paketleri, kiralama desteği ve saha takibi ile mülkünüz aktif kalır.",
+        "invest.processTitle": "Adım adım yolculuğunuz",
+        "invest.step1.title": "Tanışma görüşmesi",
+        "invest.step1.text":
+          "Hedeflerinizi, bütçenizi ve yatırım/zaman planınızı anlamak.",
+        "invest.step2.title": "Kısa liste ve analiz",
+        "invest.step2.text":
+          "Sizin için seçili projeleri, rakamlar ve risklerle birlikte sunuyoruz.",
+        "invest.step3.title": "Saha ziyareti ve seçim",
+        "invest.step3.text":
+          "Projelere yerinde veya çevrim içi ziyaret ve geliştirici/fabrika görüşmeleri.",
+        "invest.step4.title": "Sözleşme ve takip",
+        "invest.step4.text":
+          "Sözleşmelerin imzalanması, ödemelerin izlenmesi ve düzenli bilgilendirme.",
+
+        "testimonials.kicker": "Referanslar",
+        "testimonials.title": "Müşterilerimiz ne diyor?",
+        "testimonials.sub":
+          "Müşterilerimizin büyük bölümü, sakin, planlı ve şeffaf bir süreç yaşamış diğer müşterilerin tavsiyesiyle gelir.",
+        "testimonials.t1.text":
+          "“Başka bir ülkede gayrimenkul almaktan çekiniyorduk. MANA GLOBAL A’dan Z’ye her şeyi hazırladı ve teslimden sonra kiralamada da destek oldu.”",
+        "testimonials.t1.name": "Riyad’dan bir aile",
+        "testimonials.t1.meta": "İstanbul · Konut projesi",
+        "testimonials.t2.text":
+          "“Bir iş insanı olarak hem gayrimenkul hem de Türkiye’den ürün ihracatı ihtiyacım vardı; fabrika ziyaretleri, pazarlık ve sevkiyatı sorunsuz yönettiler.”",
+        "testimonials.t2.name": "Dubai’den girişimci",
+        "testimonials.t2.meta": "İhracat + ticari gayrimenkul",
+        "testimonials.t3.text":
+          "“Kendi dilimizde açık iletişim, gerçekçi rakamlar ve baskısız bir süreç… Bu yüzden akrabalarımızı da aynı ekibe yönlendirdik.”",
+        "testimonials.t3.name": "Yatırımcı grubu",
+        "testimonials.t3.meta": "Çoklu ünite yatırım portföyü",
+
+        "contact.kicker": "İletişim",
+        "contact.title": "Planınızı paylaşın, dosyanızı birlikte kuralım",
+        "contact.sub":
+          "Aşağıdaki formu doldurun veya WhatsApp üzerinden bize yazın. Türkçe, Arapça veya İngilizce konuşan müşteri temsilcimiz 24 saat içinde sizinle iletişime geçecektir.",
+        "contact.form.nameLabel": "Ad Soyad",
+        "contact.form.namePlaceholder": "Adınızı ve soyadınızı yazın",
+        "contact.form.phoneLabel": "WhatsApp numarası",
+        "contact.form.phonePlaceholder": "+90...",
+        "contact.form.countryLabel": "İkamet edilen ülke",
+        "contact.form.countryPlaceholder": "Suudi Arabistan, BAE, Katar...",
+        "contact.form.budgetLabel": "Tahmini bütçe",
+        "contact.form.budgetPlaceholder": "Bütçe aralığı seçin",
+        "contact.form.goalLabel": "Ana hedef",
+        "contact.form.goalPlaceholder": "Ana hedefinizi seçin",
+        "contact.form.goal1": "Aile konutu ve oturum",
+        "contact.form.goal2": "Saf yatırım ve kira geliri",
+        "contact.form.goal3": "İhracat ve ürün tedariği",
+        "contact.form.goal4": "Diğer (aşağıda açıklayın)",
+        "contact.form.messageLabel": "Ek bilgiler",
+        "contact.form.messagePlaceholder":
+          "Planınız, zaman çizelgeniz ve tercih ettiğiniz şehirler hakkında bilgi verin.",
+        "contact.form.submit": "Talep gönder (demo form)",
+        "contact.form.note":
+          "Bu form, prototip içindir. Sunucunuzda e-posta veya CRM sisteminize bağlayın.",
+
+        "contact.info.office": "Merkez Ofis – Türkiye",
+        "contact.info.email": "E-posta",
+        "contact.info.phone": "Telefon & WhatsApp",
+        "contact.info.whatsapp":
+          "WhatsApp mı tercih ediyorsunuz? Adınız, ülkeniz, bütçeniz ve ana hedefinizle sesli mesaj gönderin; size özel plan ve proje önerileriyle dönüş yapalım.",
+
+        "footer.copy":
+          "© " + new Date().getFullYear() + " MANA GLOBAL. Tüm hakları saklıdır.",
+        "footer.backToTop": "Başa dön",
+        "footer.services": "Hizmetler",
+        "footer.properties": "Projeler"
+      }
+    };
+
+    // i18n APPLY FUNCTION
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const i18nElems = document.querySelectorAll("[data-i18n]");
+    const i18nPlaceholderElems = document.querySelectorAll("[data-i18n-placeholder]");
+
+    function setLanguage(lang) {
+      const dict = translations[lang] || translations.en;
+
+      i18nElems.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      i18nPlaceholderElems.forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (dict[key]) el.placeholder = dict[key];
+      });
+
+      langButtons.forEach((btn) =>
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang)
+      );
+
+      // RTL for Arabic
+      if (lang === "ar") {
+        document.documentElement.lang = "ar";
+        document.documentElement.dir = "rtl";
+      } else {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = "ltr";
+      }
+    }
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        setLanguage(lang);
+      });
+    });
+
+    // default language
+    setLanguage("en");
+  </script>
+</body>
+</html>

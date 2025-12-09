@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prime Resale Realty – Your Global Property Reselling Partner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Prime Resale Realty helps you resell apartments, villas, and commercial properties quickly and safely through a trusted network of buyers and agents."
+  />
+
+  <style>
+    :root {
+      --clr-bg: #050816;
+      --clr-bg-alt: #0b1020;
+      --clr-primary: #00b894;
+      --clr-primary-soft: rgba(0, 184, 148, 0.1);
+      --clr-accent: #ffb341;
+      --clr-text: #f5f7fb;
+      --clr-muted: #a3acc4;
+      --clr-border: rgba(255, 255, 255, 0.08);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.55);
+      --max-width: 1160px;
+      --nav-height: 72px;
+      --transition: 0.25s ease;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #1b243b 0, #050816 55%);
+      color: var(--clr-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top bar */
+    .top-bar {
+      background: #020612;
+      border-bottom: 1px solid var(--clr-border);
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.4rem 0;
+    }
+
+    .top-bar-left,
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+    }
+
+    .lang-pill {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .lang-pill.active {
+      background: var(--clr-primary);
+      color: #020612;
+    }
+
+    .top-link {
+      opacity: 0.75;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 8, 22, 0.96),
+        rgba(5, 8, 22, 0.85),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 13px;
+      background: conic-gradient(
+        from 180deg,
+        #00f5d4,
+        #00b894,
+        #00f5d4
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(0, 184, 148, 0.8);
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #020612;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      color: var(--clr-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--clr-primary), #00f5d4);
+      color: #020612;
+      font-weight: 600;
+      box-shadow: 0 12px 26px rgba(0, 184, 148, 0.4);
+      border: none;
+      cursor: pointer;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .nav-cta span.icon {
+      font-size: 1rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      color: var(--clr-text);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 8, 22, 0.6);
+      font-size: 0.75rem;
+      color: var(--clr-muted);
+      margin-bottom: 1rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--clr-primary);
+      box-shadow: 0 0 8px rgba(0, 184, 148, 0.8);
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(90deg, #00f5d4, #00b894, #00d4ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--clr-muted);
+      max-width: 36rem;
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-outline {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(5, 8, 22, 0.6);
+      color: var(--clr-text);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+    }
+
+    .stat {
+      min-width: 120px;
+    }
+
+    .stat-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      background: radial-gradient(circle at top left, #13223b, #060a14);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(0, 184, 148, 0.12);
+      color: var(--clr-primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .hero-location {
+      font-size: 0.9rem;
+      color: var(--clr-muted);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-meta span {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-float {
+      position: absolute;
+      right: 1.1rem;
+      top: 1.1rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: radial-gradient(circle at 20% 0, #00f5d4, transparent 55%),
+        radial-gradient(circle at 80% 100%, #00b894, transparent 55%);
+      opacity: 0.8;
+      filter: blur(0.3px);
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: transparent;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--clr-bg-alt);
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-primary);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      max-width: 480px;
+      color: var(--clr-muted);
+      font-size: 0.9rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 8, 22, 0.7);
+      color: var(--clr-muted);
+    }
+
+    /* About / Mission & Vision */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: start;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--clr-border);
+      background: rgba(5, 8, 22, 0.8);
+      padding: 1.1rem 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--clr-muted);
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card-grid-3 .card {
+      background: rgba(5, 8, 22, 0.9);
+    }
+
+    /* Property Categories */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .category-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--clr-border);
+      padding: 0.9rem;
+      background: rgba(5, 8, 22, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+    }
+
+    .category-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .category-meta {
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+    }
+
+    /* Featured Properties */
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .property-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--clr-border);
+      background: rgba(5, 8, 22, 0.88);
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-media {
+      position: relative;
+      height: 180px;
+      background: radial-gradient(circle at 0 0, #00f5d4, transparent 40%),
+        radial-gradient(circle at 100% 100%, #5f27cd, transparent 40%);
+    }
+
+    .property-tag {
+      position: absolute;
+      left: 0.9rem;
+      top: 0.9rem;
+      padding: 0.22rem 0.65rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .property-body {
+      padding: 1rem 1.1rem 1.1rem;
+      font-size: 0.88rem;
+    }
+
+    .property-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .property-location {
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .property-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--clr-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .property-specs span {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .property-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+    }
+
+    .property-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--clr-primary);
+    }
+
+    .property-btn {
+      font-size: 0.8rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(5, 8, 22, 0.7);
+      cursor: pointer;
+    }
+
+    /* How it works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--clr-border);
+      padding: 1rem;
+      background: rgba(5, 8, 22, 0.9);
+      font-size: 0.86rem;
+    }
+
+    .step-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--clr-primary-soft);
+      color: var(--clr-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Locations & Partners */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    .locations-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+    }
+
+    .locations-list h4 {
+      font-size: 0.9rem;
+      color: var(--clr-text);
+      margin-bottom: 0.3rem;
+    }
+
+    .partner-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .partner-pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.78rem;
+      color: var(--clr-muted);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: start;
+    }
+
+    .contact-form {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--clr-border);
+      background: rgba(5, 8, 22, 0.9);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 0.9rem;
+      flex: 1;
+      min-width: 160px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+    }
+
+    input,
+    select,
+    textarea {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 8, 22, 0.85);
+      color: var(--clr-text);
+      padding: 0.55rem 0.8rem;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    textarea {
+      border-radius: 16px;
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(163, 172, 196, 0.65);
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      margin-top: 0.4rem;
+    }
+
+    .btn-primary {
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(120deg, var(--clr-primary), #00f5d4);
+      color: #020612;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 184, 148, 0.45);
+    }
+
+    .contact-side {
+      font-size: 0.9rem;
+      color: var(--clr-muted);
+    }
+
+    .contact-side h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--clr-text);
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-highlight {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-lg);
+      background: rgba(0, 184, 148, 0.1);
+      border: 1px solid rgba(0, 184, 148, 0.25);
+      font-size: 0.82rem;
+      color: var(--clr-primary);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #020612;
+      padding: 1.8rem 0 2.4rem;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      color: var(--clr-muted);
+    }
+
+    .footer-links li {
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-bottom {
+      margin-top: 1.3rem;
+      font-size: 0.78rem;
+      color: var(--clr-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .about-grid,
+      .locations-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .properties-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        inset: calc(var(--nav-height) + 8px) 1.5rem auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.9rem 1rem;
+        background: rgba(5, 8, 22, 0.98);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: var(--shadow-soft);
+        transform-origin: top right;
+        transform: scale(0.9);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition), transform var(--transition);
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .properties-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .top-bar-inner {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <div class="top-bar-left">
+          <div class="top-link">📞 +966-55-000-0000</div>
+          <div class="top-link">✉️ info@primeresalerealty.com</div>
+        </div>
+        <div class="top-bar-right">
+          <div class="lang-switch">
+            <span class="lang-pill active">EN</span>
+            <span class="lang-pill">AR</span>
+          </div>
+          <a href="#faq" class="top-link">FAQ</a>
+          <a href="#contact" class="top-link">Inquiries</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="container nav">
+        <a href="#hero" class="logo">
+          <div class="logo-mark">PR</div>
+          <div>
+            <div class="logo-text-main">Prime Resale Realty</div>
+            <div class="logo-text-sub">Real Estate Reselling Network</div>
+          </div>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+          ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#about">About Us</a>
+          <a href="#categories">Property Types</a>
+          <a href="#properties">Resale Deals</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#locations">Locations</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span class="icon">📋</span>
+          Get Free Property Valuation
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section id="hero" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Trusted resale partner for owners & investors
+            </div>
+            <h1 class="hero-title">
+              Resell your property
+              <span class="highlight">faster & smarter</span>
+              through one trusted network.
+            </h1>
+            <p class="hero-subtitle">
+              Prime Resale Realty connects property owners with qualified buyers
+              and professional brokers—helping you resell apartments, villas and
+              commercial units with transparent pricing and end-to-end support.
+            </p>
+
+            <div class="hero-actions">
+              <button class="nav-cta" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                Request valuation
+              </button>
+              <button class="btn-outline" type="button" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">
+                View resale opportunities
+              </button>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-label">TRANSACTIONS</div>
+                <div class="stat-value">1,200+ closed</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">MARKETS COVERED</div>
+                <div class="stat-value">KSA • GCC • Turkey</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">AVERAGE RESALE TIME</div>
+                <div class="stat-value">&lt; 60 days</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-float" aria-hidden="true"></div>
+            <div class="hero-card-tag">
+              🔍 Live Resale Case
+            </div>
+            <div class="hero-card-main">
+              <div class="hero-price">SAR 1,250,000</div>
+              <div class="hero-location">
+                3BR Apartment – North Riyadh, Saudi Arabia
+              </div>
+              <div class="hero-meta">
+                <span>Ready to move</span>
+                <span>Owner occupied</span>
+                <span>Mortgage settled</span>
+              </div>
+            </div>
+            <p style="font-size:0.83rem;color:var(--clr-muted);margin-bottom:0.6rem;">
+              This property was listed through Prime Resale Realty and matched with a
+              serious buyer in 27 days with full documentation support and bank
+              coordination.
+            </p>
+            <p style="font-size:0.8rem;color:var(--clr-muted);">
+              Want to achieve similar results? Share your property details and our
+              resale team will prepare a personalized exit strategy.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- About + Mission / Vision / Values -->
+      <section id="about">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Who we are</div>
+              <h2 class="section-title">Your resale partner in the secondary market</h2>
+            </div>
+            <p class="section-subtitle">
+              We specialize in helping owners exit their properties with confidence.
+              From price assessment and marketing to buyer negotiation and transfer at
+              the registry, we stay with you in every step of the resale journey.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="card">
+              <h3>Prime Resale Realty</h3>
+              <p>
+                Prime Resale Realty is a dedicated secondary-market platform focusing
+                on apartments, villas and investment units. We operate through a
+                network of vetted real estate offices, financial institutions and
+                legal partners to ensure smooth, compliant and secure resale
+                transactions for our clients.
+              </p>
+              <p style="margin-top:0.7rem;font-size:0.9rem;color:var(--clr-muted);">
+                Whether you are an individual owner or an institutional investor, we
+                help you liquidate or upgrade your portfolio while protecting your
+                time and maximizing your returns.
+              </p>
+            </div>
+
+            <div>
+              <div class="card-grid-3">
+                <div class="card">
+                  <h3>Our Mission</h3>
+                  <p>
+                    To simplify the resale experience by offering transparent
+                    valuations, professional marketing and secure closing services
+                    across local and international markets.
+                  </p>
+                </div>
+                <div class="card">
+                  <h3>Our Vision</h3>
+                  <p>
+                    To become the most trusted resale platform in the region, known
+                    for speed, integrity and data-driven pricing for property owners
+                    and investors.
+                  </p>
+                </div>
+                <div class="card">
+                  <h3>Our Culture</h3>
+                  <p>
+                    We combine real estate expertise with technology, putting
+                    honesty, compliance and long-term relationships at the center of
+                    everything we do.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:1.6rem;" class="pill-row">
+            <span class="pill">End-to-end resale support</span>
+            <span class="pill">Bank & mortgage coordination</span>
+            <span class="pill">Legal and documentation review</span>
+            <span class="pill">Investor-grade analysis</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Property categories -->
+      <section id="categories">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Property Types</div>
+              <h2 class="section-title">What we help you resell</h2>
+            </div>
+            <p class="section-subtitle">
+              From city apartments to vacation villas, our resale specialists work
+              across multiple asset classes, tailoring the strategy to your property
+              type and target buyer.
+            </p>
+          </div>
+
+          <div class="categories-grid">
+            <div class="category-card">
+              <div class="category-label">City Apartments</div>
+              <div class="category-meta">
+                Studios to 4BR units in prime residential towers and communities.
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="category-label">Villas & Townhouses</div>
+              <div class="category-meta">
+                Family homes in gated communities and standalone villas.
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="category-label">Investment Units</div>
+              <div class="category-meta">
+                Tenanted apartments and income-generating properties.
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="category-label">Commercial</div>
+              <div class="category-meta">
+                Offices, retail units and mixed-use spaces ready for resale.
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="category-label">Land & Plots</div>
+              <div class="category-meta">
+                Serviced plots and development land in high-growth areas.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured properties -->
+      <section id="properties">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Resale Opportunities</div>
+              <h2 class="section-title">Sample properties from our network</h2>
+            </div>
+            <p class="section-subtitle">
+              The following listings are examples of the type of resale properties we
+              handle. Replace them with your live inventory or connect them to your
+              property management system.
+            </p>
+          </div>
+
+          <div class="properties-grid">
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-tag">New Listing</div>
+              </div>
+              <div class="property-body">
+                <div class="property-title">3BR Corner Villa – Gated Community</div>
+                <div class="property-location">
+                  Riyadh – Northern Ring Road, Saudi Arabia
+                </div>
+                <div class="property-specs">
+                  <span>3 Bedrooms</span>
+                  <span>4 Bathrooms</span>
+                  <span>2 Parking</span>
+                  <span>350 m²</span>
+                </div>
+                <div class="property-footer">
+                  <div>
+                    <div class="property-price">SAR 2,350,000</div>
+                    <div>Expected resale time: 45–60 days</div>
+                  </div>
+                  <button class="property-btn" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    Request details
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-tag">Investor Deal</div>
+              </div>
+              <div class="property-body">
+                <div class="property-title">Tenanted 2BR Apartment – City Center</div>
+                <div class="property-location">
+                  Jeddah – Waterfront District, Saudi Arabia
+                </div>
+                <div class="property-specs">
+                  <span>2 Bedrooms</span>
+                  <span>Rented</span>
+                  <span>Net yield 6.5%</span>
+                  <span>Ready title deed</span>
+                </div>
+                <div class="property-footer">
+                  <div>
+                    <div class="property-price">SAR 980,000</div>
+                    <div>Ideal for portfolio upgrade</div>
+                  </div>
+                  <button class="property-btn" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    Match with buyers
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-tag">International</div>
+              </div>
+              <div class="property-body">
+                <div class="property-title">Waterfront Apartment – Istanbul</div>
+                <div class="property-location">
+                  Istanbul, Turkey – Branded residence
+                </div>
+                <div class="property-specs">
+                  <span>1 Bedroom</span>
+                  <span>Furnished</span>
+                  <span>Sea view</span>
+                  <span>Developer warranty</span>
+                </div>
+                <div class="property-footer">
+                  <div>
+                    <div class="property-price">USD 260,000</div>
+                    <div>Available for resale & assignment</div>
+                  </div>
+                  <button class="property-btn" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    Explore options
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Process</div>
+              <h2 class="section-title">How the resale journey works</h2>
+            </div>
+            <p class="section-subtitle">
+              We follow a structured resale framework that protects both seller and
+              buyer while keeping the process simple and well documented.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-badge">1</div>
+              <div class="step-title">Share your property</div>
+              <p>
+                Send us basic details: location, size, finishing, age, current
+                status and any mortgage or payment plans.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">2</div>
+              <div class="step-title">Valuation & resale plan</div>
+              <p>
+                We prepare an indicative resale price range, timeline and target
+                buyer profile based on our data and market analysis.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">3</div>
+              <div class="step-title">Marketing & viewings</div>
+              <p>
+                Your property is promoted through our network. We coordinate
+                viewings and collect serious offers only.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">4</div>
+              <div class="step-title">Secure closing</div>
+              <p>
+                We support both parties through negotiation, contracts, bank
+                settlement and transfer at the registry until completion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Locations & Partners -->
+      <section id="locations">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Network</div>
+              <h2 class="section-title">Local presence, regional reach</h2>
+            </div>
+            <p class="section-subtitle">
+              We operate across key cities in Saudi Arabia with partner offices in
+              neighboring markets and selected international hubs.
+            </p>
+          </div>
+
+          <div class="locations-grid">
+            <div class="card">
+              <h3 style="font-size:1rem;margin-bottom:0.5rem;">
+                Branches & service coverage
+              </h3>
+              <div class="locations-list">
+                <div>
+                  <h4>Saudi Arabia</h4>
+                  <p>Riyadh • Jeddah • Dammam • Khobar</p>
+                  <p style="margin-top:0.3rem;">
+                    Dedicated resale consultants, property photography and site
+                    visits.
+                  </p>
+                </div>
+                <div>
+                  <h4>Regional & International</h4>
+                  <p>UAE • Bahrain • Turkey (Istanbul)</p>
+                  <p style="margin-top:0.3rem;">
+                    Partner network for cross-border resale, migration and
+                    investment strategies.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="font-size:1rem;margin-bottom:0.5rem;">
+                Developers & banking partners
+              </h3>
+              <p style="font-size:0.9rem;color:var(--clr-muted);margin-bottom:0.7rem;">
+                We align with reputable developers and financing partners to ensure
+                your resale transaction meets compliance and funding requirements.
+              </p>
+              <div class="partner-row">
+                <span class="partner-pill">Top-tier developers</span>
+                <span class="partner-pill">Local brokerage offices</span>
+                <span class="partner-pill">Islamic & conventional banks</span>
+                <span class="partner-pill">Real estate lawyers</span>
+                <span class="partner-pill">Valuation experts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Contact</div>
+              <h2 class="section-title">Request a resale consultation</h2>
+            </div>
+            <p class="section-subtitle">
+              Share your property details and we’ll contact you to discuss the best
+              resale strategy—whether you want a quick exit or a maximized price.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a demo front-end form. Connect it to your backend or CRM.');">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Full Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone (WhatsApp)</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+966..." />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@email.com" />
+                </div>
+                <div class="field">
+                  <label for="city">City</label>
+                  <select id="city" name="city">
+                    <option value="">Select city</option>
+                    <option>Riyadh</option>
+                    <option>Jeddah</option>
+                    <option>Dammam</option>
+                    <option>Khobar</option>
+                    <option>Istanbul</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="type">Property Type</label>
+                  <select id="type" name="type">
+                    <option value="">Select type</option>
+                    <option>Apartment</option>
+                    <option>Villa / Townhouse</option>
+                    <option>Commercial</option>
+                    <option>Land / Plot</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="status">Current Status</label>
+                  <select id="status" name="status">
+                    <option value="">Select status</option>
+                    <option>Ready & vacant</option>
+                    <option>Ready & rented</option>
+                    <option>Off-plan / under construction</option>
+                    <option>Under mortgage</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Brief description</label>
+                <textarea id="message" name="message" placeholder="Size, community name, age of property, expected price, and any notes about mortgage or payment plan."></textarea>
+              </div>
+
+              <button class="btn-primary" type="submit">
+                Submit &amp; schedule a call
+              </button>
+
+              <p class="contact-note">
+                By submitting this form, you agree to be contacted via phone, email or
+                WhatsApp about your property resale request.
+              </p>
+            </form>
+
+            <div class="contact-side">
+              <h3>Head office</h3>
+              <p>
+                North Business District, Riyadh 12345, Saudi Arabia<br />
+                <strong>Phone:</strong> +966-55-000-0000<br />
+                <strong>Email:</strong> info@primeresalerealty.com
+              </p>
+
+              <ul class="contact-list">
+                <li>🕒 Sunday–Thursday, 9:00 AM – 6:00 PM</li>
+                <li>📍 In-person consultations by appointment</li>
+                <li>🌍 Online consultations for international owners</li>
+              </ul>
+
+              <div class="contact-highlight">
+                🔑 <strong>Are you a broker or developer?</strong><br />
+                Join our resale network and access qualified sellers & buyers with
+                centralized support. <em>Contact us to become a partner.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Simple FAQ anchor (placeholder) -->
+      <section id="faq">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">FAQ</div>
+              <h2 class="section-title">Frequently asked questions</h2>
+            </div>
+            <p class="section-subtitle">
+              Replace this section with a full FAQ page or link it to your help
+              center. For now, it’s a placeholder so the “FAQ” links have a target.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>What are your service fees?</h3>
+            <p style="font-size:0.9rem;color:var(--clr-muted);">
+              You can define your own commission or fixed fee structure here
+              (subject to local regulations). In the real project, replace this text
+              with your official pricing and terms.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo">
+              <div class="logo-mark">PR</div>
+              <div>
+                <div class="logo-text-main">Prime Resale Realty</div>
+                <div class="logo-text-sub">Real Estate Reselling Network</div>
+              </div>
+            </div>
+            <p style="margin-top:0.6rem;color:var(--clr-muted);font-size:0.85rem;">
+              Helping property owners and investors exit confidently from their real
+              estate assets through a structured, transparent and compliant resale
+              process.
+            </p>
+          </div>
+
+          <div>
+            <div class="footer-title">Site Map</div>
+            <ul class="footer-links">
+              <li><a href="#about">About us</a></li>
+              <li><a href="#categories">Property types</a></li>
+              <li><a href="#properties">Resale deals</a></li>
+              <li><a href="#how-it-works">How it works</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-title">Support</div>
+            <ul class="footer-links">
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contact">Contact & inquiries</a></li>
+              <li><a href="#contact">Become a partner</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-title">Contact</div>
+            <ul class="footer-links">
+              <li>Riyadh, Saudi Arabia</li>
+              <li>+966-55-000-0000</li>
+              <li>info@primeresalerealty.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2025 Prime Resale Realty. All rights reserved.</div>
+          <div>
+            <a href="#!">Privacy Policy</a> ·
+            <a href="#!">Cookies Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+  </script>
+</body>
+</html>

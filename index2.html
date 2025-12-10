@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>MANA GLOBAL – Real Estate | Project Marketing | Export</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="MANA GLOBAL – A global vision rooted in local experience. Real estate, project marketing, and export solutions tailored for investors in Türkiye and beyond."
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/media/logo-mana-global.svg" />
+</head>
+
+<body class="dark-theme">
+
+  <!-- ==================== -->
+  <!-- PRELOADER -->
+  <!-- ==================== -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <img src="assets/media/logo-mana-global.svg" alt="MANA GLOBAL Logo" />
+    </div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text" data-i18n="preloader.loading">
+      Loading your investment experience...
+    </div>
+  </div>
+
+  <!-- ==================== -->
+  <!-- HEADER / NAVBAR -->
+  <!-- ==================== -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#hero" class="logo" aria-label="MANA GLOBAL Home">
+          <div class="logo-mark">
+            <img src="assets/media/logo-mana-global.svg" alt="MANA GLOBAL Logo" />
+          </div>
+          <div class="logo-text">
+            <div class="logo-title">MANA GLOBAL</div>
+            <small class="logo-sub">
+              Real Estate · Project Marketing · Export
+            </small>
+          </div>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#hero" data-i18n="nav.home" class="active-nav">Home</a>
+          <a href="#why-mana" data-i18n="nav.whyMana">Why MANA</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#export" data-i18n="nav.export">Export</a>
+          <a href="#projects" data-i18n="nav.projectMarketing">Project Marketing</a>
+          <a href="#properties" data-i18n="nav.properties">Properties</a>
+          <a href="#invest" data-i18n="nav.investment">Investment</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+          <div class="nav-actions">
+            <div class="lang-switcher">
+              <button class="lang-btn active" data-lang="en">EN</button>
+              <button class="lang-btn" data-lang="ar">AR</button>
+              <button class="lang-btn" data-lang="tr">TR</button>
+            </div>
+            <button class="theme-toggle" id="themeToggle" title="Dark / Light">
+              🌙
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== -->
+  <!-- HERO WITH VIDEO -->
+  <!-- ==================== -->
+  <section id="hero" class="hero">
+    <video id="heroVideo" autoplay muted loop playsinline>
+      <source src="assets/media/intro.mp4" type="video/mp4" />
+      <!-- If you want to use a different file name, change the src above accordingly -->
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left" data-animate="fade-up">
+            <div class="hero-kicker">
+              <span class="dot"></span>
+              <span data-i18n="hero.kicker">Trusted Investment Partner in Türkiye</span>
+            </div>
+            <h1 class="hero-title">
+              <span data-i18n="hero.title1">Global real estate</span>
+              <span class="hero-highlight" data-i18n="hero.title2">
+                tailored for investors
+              </span>
+            </h1>
+            <p class="hero-text" data-i18n="hero.text">
+              MANA GLOBAL connects you with carefully selected projects across Türkiye and beyond, with full legal
+              support, transparent pricing, and structured investment plans for families and investors.
+            </p>
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge1.title">Real Estate</strong>
+                <span data-i18n="hero.badge1.text">Residential · Commercial · Lands</span>
+              </div>
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge2.title">Project Marketing</strong>
+                <span data-i18n="hero.badge2.text">From launch to sell-out</span>
+              </div>
+              <div class="hero-badge">
+                <strong data-i18n="hero.badge3.title">Export</strong>
+                <span data-i18n="hero.badge3.text">Türkiye to GCC & global</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#properties" class="btn btn-primary" data-i18n="hero.cta1">
+                Browse key projects
+              </a>
+              <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">
+                Book free consultation
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stats-item">
+                <strong>150+</strong>
+                <span data-i18n="hero.stat1">Units reserved by GCC investors</span>
+              </div>
+              <div class="hero-stats-item">
+                <strong>12</strong>
+                <span data-i18n="hero.stat2">Cities covered in Türkiye</span>
+              </div>
+              <div class="hero-stats-item">
+                <strong>24/7</strong>
+                <span data-i18n="hero.stat3">Follow-up & after-sales service</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right" data-animate="fade-up-delay">
+            <div class="hero-card">
+              <div class="hero-card-title" data-i18n="hero.form.title">
+                Quick investment overview
+              </div>
+              <div class="hero-card-grid">
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.country.label">Preferred country</span>
+                  <span data-i18n="hero.form.country.value">Türkiye · Istanbul focus</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.budget.label">Budget range</span>
+                  <span>$150K – $750K</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.goal.label">Main goal</span>
+                  <span data-i18n="hero.form.goal.value">Passive income + capital growth</span>
+                </div>
+                <div class="hero-chip">
+                  <span data-i18n="hero.form.type.label">Investor type</span>
+                  <span data-i18n="hero.form.type.value">Family · Business owner · High-net-worth</span>
+                </div>
+              </div>
+              <div class="hero-note" data-i18n="hero.form.note">
+                Share your details at the bottom of the page and our team will send you a customized investment portfolio
+                within 24 hours.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- WHY MANA GLOBAL – HERO SECTION -->
+  <!-- ==================== -->
+  <section id="why-mana" class="why-mana">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text" data-animate="fade-up">
+          <div class="section-kicker" data-i18n="why.kicker">
+            WHY MANA GLOBAL
+          </div>
+          <h2 class="section-title">
+            <span data-i18n="why.title.en">A Global Vision Rooted in Local Experience</span>
+          </h2>
+          <p class="section-sub" data-i18n="why.subtitle">
+            We combine international investor expectations with deep on-ground expertise in Türkiye, enabling you to
+            move confidently from decision to execution.
+          </p>
+          <div class="why-points">
+            <div class="why-point">
+              <h3 data-i18n="why.point1.title">Investor-first approach</h3>
+              <p data-i18n="why.point1.text">
+                We structure every deal around your risk appetite, holding period, and long-term objectives.
+              </p>
+            </div>
+            <div class="why-point">
+              <h3 data-i18n="why.point2.title">Local legal & technical partners</h3>
+              <p data-i18n="why.point2.text">
+                Our network of lawyers, valuers, and engineers protects your investment from day one.
+              </p>
+            </div>
+            <div class="why-point">
+              <h3 data-i18n="why.point3.title">One integrated platform</h3>
+              <p data-i18n="why.point3.text">
+                From property selection and project marketing to export and after-sales, you deal with one accountable
+                team.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="why-aside" data-animate="fade-up-delay">
+          <div class="why-aside-card">
+            <div class="why-aside-item">
+              <span class="why-aside-label" data-i18n="why.aside1.label">Main focus</span>
+              <span class="why-aside-value" data-i18n="why.aside1.value">
+                Türkiye · GCC investors · Global reach
+              </span>
+            </div>
+            <div class="why-aside-item">
+              <span class="why-aside-label" data-i18n="why.aside2.label">Core pillars</span>
+              <span class="why-aside-value" data-i18n="why.aside2.value">
+                Real estate · Project marketing · Export
+              </span>
+            </div>
+            <div class="why-aside-item">
+              <span class="why-aside-label" data-i18n="why.aside3.label">Key promise</span>
+              <span class="why-aside-value" data-i18n="why.aside3.value">
+                Transparent, structured, and legally safe investments.
+              </span>
+            </div>
+            <div class="why-aside-note" data-i18n="why.aside.note">
+              Our role is not to “sell a unit” – it is to architect an investment that fits your family and your future.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- ABOUT SECTION -->
+  <!-- ==================== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="about.kicker">ABOUT</div>
+        <h2 class="section-title" data-i18n="about.title">
+          Your bridge between opportunity and execution
+        </h2>
+        <p class="section-sub" data-i18n="about.sub">
+          MANA GLOBAL is a boutique real estate, export, and project marketing firm that connects curated Turkish
+          opportunities with global investors – with full focus on governance, documentation, and after-sales.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="about-card" data-animate="fade-up">
+          <div class="about-pill" data-i18n="about.mission.label">Our mission</div>
+          <h3 class="about-title" data-i18n="about.mission.title">
+            Make cross-border investment simple, safe, and structured.
+          </h3>
+          <p class="about-text" data-i18n="about.mission.text">
+            We act as your on-ground team in Türkiye – screening projects, negotiating with developers, aligning
+            with legal advisors, and ensuring you have a single point of accountability from selection to exit.
+          </p>
+          <div class="about-highlights">
+            <div class="about-item">
+              <strong data-i18n="about.highlight1.title">Structured process</strong>
+              <span data-i18n="about.highlight1.text">
+                Checklists, documentation, and clear steps across every deal.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.highlight2.title">Risk awareness</strong>
+              <span data-i18n="about.highlight2.text">
+                We highlight both upside and risk to build realistic expectations.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.highlight3.title">Long-term lens</strong>
+              <span data-i18n="about.highlight3.text">
+                We focus on portfolios, not one-off transactions.
+              </span>
+            </div>
+            <div class="about-item">
+              <strong data-i18n="about.highlight4.title">Family centric</strong>
+              <span data-i18n="about.highlight4.text">
+                Solutions designed for families, business owners, and HNWIs.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card" data-animate="fade-up-delay">
+          <div class="about-pill" data-i18n="about.expertise.label">Expertise</div>
+          <h3 class="about-title" data-i18n="about.expertise.title">
+            Real estate · Export · Project marketing
+          </h3>
+          <p class="about-text" data-i18n="about.expertise.text">
+            Our portfolio ranges from residential and commercial real estate to export and trade flows between Türkiye
+            and GCC – with project marketing capabilities that support developers and brands.
+          </p>
+          <ul class="about-list">
+            <li data-i18n="about.expertise.point1">
+              Sourcing and vetting real estate projects with clear documentation.
+            </li>
+            <li data-i18n="about.expertise.point2">
+              Structuring export opportunities with repeatable trade flows.
+            </li>
+            <li data-i18n="about.expertise.point3">
+              Developing go-to-market and project marketing plans for developers.
+            </li>
+          </ul>
+          <div class="badge-tag" data-i18n="about.tag">
+            Istanbul · Antalya · Izmir · Bursa · Emerging cities
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- SERVICES SECTION -->
+  <!-- ==================== -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="services.kicker">SERVICES</div>
+        <h2 class="section-title" data-i18n="services.title">
+          Integrated services for serious investors and developers
+        </h2>
+        <p class="section-sub" data-i18n="services.sub">
+          From scouting and due diligence to marketing and after-sales, MANA GLOBAL acts as an integrated partner
+          across the full investment lifecycle.
+        </p>
+      </div>
+
+      <div class="cards-3">
+        <div class="card" data-animate="fade-up">
+          <h3 data-i18n="services.card1.title">Real estate advisory</h3>
+          <p data-i18n="services.card1.text">
+            Tailored portfolios for families, business owners, and institutional investors seeking Turkish exposure.
+          </p>
+          <ul>
+            <li data-i18n="services.card1.point1">Location and project screening.</li>
+            <li data-i18n="services.card1.point2">Legal and technical coordination.</li>
+            <li data-i18n="services.card1.point3">Rental and resale strategy.</li>
+          </ul>
+        </div>
+
+        <div class="card" data-animate="fade-up-delay">
+          <h3 data-i18n="services.card2.title">Project marketing</h3>
+          <p data-i18n="services.card2.text">
+            Structured campaigns and sales funnels for developers targeting GCC and international buyers.
+          </p>
+          <ul>
+            <li data-i18n="services.card2.point1">Go-to-market and launch planning.</li>
+            <li data-i18n="services.card2.point2">Channel and partner management.</li>
+            <li data-i18n="services.card2.point3">Performance reporting and optimization.</li>
+          </ul>
+        </div>
+
+        <div class="card" data-animate="fade-up-slow">
+          <h3 data-i18n="services.card3.title">Export & trade facilitation</h3>
+          <p data-i18n="services.card3.text">
+            Connecting Turkish manufacturers with buyers across the GCC and beyond with reliable trade structures.
+          </p>
+          <ul>
+            <li data-i18n="services.card3.point1">Supplier and product selection.</li>
+            <li data-i18n="services.card3.point2">Contract and logistics coordination.</li>
+            <li data-i18n="services.card3.point3">Long-term repeatable trade flows.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- EXPORT SECTION -->
+  <!-- ==================== -->
+  <section id="export">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="export.kicker">EXPORT</div>
+        <h2 class="section-title" data-i18n="export.title">
+          Structured export from Türkiye to GCC and beyond
+        </h2>
+        <p class="section-sub" data-i18n="export.sub">
+          We bridge Turkish manufacturers and brands with serious buyers through clear commercial terms, quality
+          control, and reliable logistics partners.
+        </p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="highlight" data-animate="fade-up">
+          <strong data-i18n="export.highlight1.title">Product sourcing</strong>
+          <p data-i18n="export.highlight1.text">
+            Identification and validation of suppliers and factories with sustainable capacity.
+          </p>
+        </div>
+        <div class="highlight" data-animate="fade-up-delay">
+          <strong data-i18n="export.highlight2.title">Commercial structuring</strong>
+          <p data-i18n="export.highlight2.text">
+            Negotiating pricing, payment terms, and risk distribution for repeatable trade.
+          </p>
+        </div>
+        <div class="highlight" data-animate="fade-up-slow">
+          <strong data-i18n="export.highlight3.title">Quality & logistics</strong>
+          <p data-i18n="export.highlight3.text">
+            Coordinating inspections, logistics, and delivery milestones with full transparency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- PROJECT MARKETING SECTION -->
+  <!-- ==================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="projects.kicker">PROJECT MARKETING</div>
+        <h2 class="section-title" data-i18n="projects.title">
+          From concept to sell-out for selected developments
+        </h2>
+        <p class="section-sub" data-i18n="projects.sub">
+          We partner with developers to design and execute intelligent marketing and sales journeys targeting
+          cross-border buyers and investors.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-index">1</div>
+          <h3 data-i18n="projects.step1.title">Positioning & strategy</h3>
+          <p data-i18n="projects.step1.text">
+            Defining target segments, pricing strategy, and value proposition.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-delay">
+          <div class="step-index">2</div>
+          <h3 data-i18n="projects.step2.title">Content & funnel</h3>
+          <p data-i18n="projects.step2.text">
+            Creating digital assets, campaigns, and lead management flows.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-slow">
+          <div class="step-index">3</div>
+          <h3 data-i18n="projects.step3.title">Sales enablement</h3>
+          <p data-i18n="projects.step3.text">
+            Equipping sales teams and partners with tools, scripts, and tracking.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-slower">
+          <div class="step-index">4</div>
+          <h3 data-i18n="projects.step4.title">Reporting & optimization</h3>
+          <p data-i18n="projects.step4.text">
+            Monitoring KPIs and optimizing campaigns based on actual buyer behavior.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- PROPERTIES SECTION -->
+  <!-- ==================== -->
+  <section id="properties">
+    <div class="container">
+      <div class="properties-header" data-animate="fade-up">
+        <div>
+          <div class="section-kicker" data-i18n="properties.kicker">PROPERTIES</div>
+          <h2 class="section-title" data-i18n="properties.title">
+            Curated projects for different investor profiles
+          </h2>
+          <p class="section-sub" data-i18n="properties.sub">
+            We shortlist projects based on documentation quality, location fundamentals, and exit scenarios – then match
+            them to your objectives.
+          </p>
+        </div>
+        <div class="filter-group">
+          <select id="cityFilter" class="filter-select">
+            <option value="all" data-i18n="properties.filter.city.all">All cities</option>
+            <option value="istanbul" data-i18n="properties.filter.city.istanbul">Istanbul</option>
+            <option value="antalya" data-i18n="properties.filter.city.antalya">Antalya</option>
+            <option value="izmir" data-i18n="properties.filter.city.izmir">Izmir</option>
+          </select>
+          <select id="profileFilter" class="filter-select">
+            <option value="all" data-i18n="properties.filter.profile.all">All profiles</option>
+            <option value="family" data-i18n="properties.filter.profile.family">Family</option>
+            <option value="investor" data-i18n="properties.filter.profile.investor">Investor</option>
+            <option value="hnwi" data-i18n="properties.filter.profile.hnwi">HNW</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="property-grid">
+        <!-- Property 1 -->
+        <article
+          class="property-card"
+          data-city="istanbul"
+          data-profile="family"
+          data-animate="fade-up"
+        >
+          <div class="property-img property-img-1"></div>
+          <div class="property-body">
+            <h3 data-i18n="properties.p1.title">
+              Family-focused community in European Istanbul
+            </h3>
+            <div class="property-location" data-i18n="properties.p1.location">
+              Istanbul · European side · Near schools and healthcare
+            </div>
+            <div class="property-meta">
+              <span data-i18n="properties.p1.meta1">2+1 · 3+1 · 4+1 layouts</span>
+              <span data-i18n="properties.p1.meta2">Installments up to 36 months</span>
+              <span data-i18n="properties.p1.meta3">Family amenities</span>
+            </div>
+            <div class="property-price" data-i18n="properties.p1.price">
+              From $220,000
+            </div>
+            <div class="property-footer">
+              <span class="pill" data-i18n="properties.p1.tag">Ideal for families</span>
+              <span data-i18n="properties.p1.status">Under construction</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property 2 -->
+        <article
+          class="property-card"
+          data-city="istanbul"
+          data-profile="investor"
+          data-animate="fade-up-delay"
+        >
+          <div class="property-img property-img-2"></div>
+          <div class="property-body">
+            <h3 data-i18n="properties.p2.title">
+              Investment-grade serviced apartments
+            </h3>
+            <div class="property-location" data-i18n="properties.p2.location">
+              Istanbul · Business district · High rental potential
+            </div>
+            <div class="property-meta">
+              <span data-i18n="properties.p2.meta1">Studio · 1+1 units</span>
+              <span data-i18n="properties.p2.meta2">Rental management available</span>
+              <span data-i18n="properties.p2.meta3">Near metro</span>
+            </div>
+            <div class="property-price" data-i18n="properties.p2.price">
+              From $150,000
+            </div>
+            <div class="property-footer">
+              <span class="pill" data-i18n="properties.p2.tag">Investor profile</span>
+              <span data-i18n="properties.p2.status">Ready with title deeds</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property 3 -->
+        <article
+          class="property-card"
+          data-city="antalya"
+          data-profile="hnwi"
+          data-animate="fade-up-slow"
+        >
+          <div class="property-img property-img-3"></div>
+          <div class="property-body">
+            <h3 data-i18n="properties.p3.title">
+              Seafront villas and branded residences
+            </h3>
+            <div class="property-location" data-i18n="properties.p3.location">
+              Antalya · Sea view · Resort lifestyle
+            </div>
+            <div class="property-meta">
+              <span data-i18n="properties.p3.meta1">Private pools</span>
+              <span data-i18n="properties.p3.meta2">Concierge & services</span>
+              <span data-i18n="properties.p3.meta3">High-end finishes</span>
+            </div>
+            <div class="property-price" data-i18n="properties.p3.price">
+              From $550,000
+            </div>
+            <div class="property-footer">
+              <span class="pill" data-i18n="properties.p3.tag">Premium / HNWI</span>
+              <span data-i18n="properties.p3.status">Limited inventory</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- INVESTMENT STEPS SECTION -->
+  <!-- ==================== -->
+  <section id="invest">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="invest.kicker">INVESTMENT PROCESS</div>
+        <h2 class="section-title" data-i18n="invest.title">
+          From first call to signed deed – in clear steps
+        </h2>
+        <p class="section-sub" data-i18n="invest.sub">
+          Our process is designed to reduce friction, increase clarity, and ensure all stakeholders – investors,
+          developers, and partners – are aligned at each step.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-index">1</div>
+          <h3 data-i18n="invest.step1.title">Discovery & profiling</h3>
+          <p data-i18n="invest.step1.text">
+            We understand your objectives, risk profile, and expected holding period.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-delay">
+          <div class="step-index">2</div>
+          <h3 data-i18n="invest.step2.title">Shortlist & analysis</h3>
+          <p data-i18n="invest.step2.text">
+            We share a shortlist of selected projects with clear pros, risks, and numbers.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-slow">
+          <div class="step-index">3</div>
+          <h3 data-i18n="invest.step3.title">On-ground visits & validation</h3>
+          <p data-i18n="invest.step3.text">
+            Site visits, legal checks, and valuation supported by our local partners.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-slower">
+          <div class="step-index">4</div>
+          <h3 data-i18n="invest.step4.title">Reservation & contracting</h3>
+          <p data-i18n="invest.step4.text">
+            Final selection, reservation, contract review, and payment structure.
+          </p>
+        </div>
+        <div class="process-step" data-animate="fade-up-slowest">
+          <div class="step-index">5</div>
+          <h3 data-i18n="invest.step5.title">Registration & after-sales</h3>
+          <p data-i18n="invest.step5.text">
+            Title deed support, utility setup, property management, and resale planning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- TESTIMONIALS SECTION -->
+  <!-- ==================== -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="testimonials.kicker">TESTIMONIALS</div>
+        <h2 class="section-title" data-i18n="testimonials.title">
+          What our investors and partners say
+        </h2>
+        <p class="section-sub" data-i18n="testimonials.sub">
+          We measure our success by the quality of outcomes we deliver for families, investors, and developers who trust
+          us with their capital and projects.
+        </p>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial" data-animate="fade-up">
+          <p data-i18n="testimonials.t1.text">
+            MANA GLOBAL helped us move from hesitation to a structured investment in Istanbul with full clarity on risks
+            and timelines.
+          </p>
+          <strong data-i18n="testimonials.t1.name">Family investor – GCC</strong>
+        </div>
+        <div class="testimonial" data-animate="fade-up-delay">
+          <p data-i18n="testimonials.t2.text">
+            For our development, they built the right narrative and channels to reach serious buyers instead of pure
+            traffic.
+          </p>
+          <strong data-i18n="testimonials.t2.name">Developer – Türkiye</strong>
+        </div>
+        <div class="testimonial" data-animate="fade-up-slow">
+          <p data-i18n="testimonials.t3.text">
+            Their structured export approach helped us build a repeatable trade flow rather than a one-off shipment.
+          </p>
+          <strong data-i18n="testimonials.t3.name">Trading partner – GCC</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- CONTACT SECTION -->
+  <!-- ==================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="contact.kicker">CONTACT</div>
+        <h2 class="section-title" data-i18n="contact.title">
+          Share your objectives – we will build a tailored plan
+        </h2>
+        <p class="section-sub" data-i18n="contact.sub">
+          Tell us about your budget, time horizon, and whether you prioritize income, capital growth, or both. Our
+          team will revert with a customized perspective.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form id="contactForm" data-animate="fade-up">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="contact.form.name.label">Full name</label>
+              <input id="name" name="name" type="text" placeholder="John Doe" />
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact.form.email.label">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone" data-i18n="contact.form.phone.label">WhatsApp / phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+90 ..." />
+            </div>
+            <div class="form-group">
+              <label for="country" data-i18n="contact.form.country.label">Country of residence</label>
+              <input id="country" name="country" type="text" placeholder="Saudi Arabia, UAE, Qatar..." />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="budget" data-i18n="contact.form.budget.label">Approximate budget (USD)</label>
+              <input id="budget" name="budget" type="text" placeholder="150,000 – 500,000" />
+            </div>
+            <div class="form-group">
+              <label for="goal" data-i18n="contact.form.goal.label">Main goal</label>
+              <select id="goal" name="goal">
+                <option value="income" data-i18n="contact.form.goal.income">
+                  Rental income
+                </option>
+                <option value="growth" data-i18n="contact.form.goal.growth">
+                  Capital growth
+                </option>
+                <option value="both" data-i18n="contact.form.goal.both">
+                  Combination of both
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-i18n="contact.form.message.label">
+              Tell us more about your expectations
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Timeline, preferred city, property type, any constraints..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">
+            Send details
+          </button>
+
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
+        </form>
+
+        <div class="contact-info" data-animate="fade-up-delay">
+          <div class="contact-info-item">
+            <div class="contact-label" data-i18n="contact.info.whatsapp.label">WhatsApp</div>
+            <div class="contact-value">
+              <a href="https://wa.me/905352992003" target="_blank" rel="noopener">
+                +90 535 299 20 03
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-label" data-i18n="contact.info.email.label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:info@managlobal.com">info@managlobal.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-label" data-i18n="contact.info.hours.label">Availability</div>
+            <div class="contact-value" data-i18n="contact.info.hours.value">
+              Monday – Saturday · 10:00–19:00 (Türkiye time)
+            </div>
+          </div>
+
+          <div class="whatsapp-cta" data-i18n="contact.info.waCta">
+            Prefer WhatsApp? Send us a voice note or text, and mention your name, budget, and target city. We will reply
+            with a structured response – not generic links.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- LOCATION SECTION (MAP + STREET VIEW) -->
+  <!-- ==================== -->
+  <section id="location" class="map-section">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-kicker" data-i18n="location.kicker">LOCATION</div>
+        <h2 class="section-title" data-i18n="location.title">
+          Visit us on Google Maps
+        </h2>
+        <p class="section-sub" data-i18n="location.sub">
+          Explore our location and surroundings through Google Maps and Street View for better orientation before your
+          visit.
+        </p>
+      </div>
+
+      <div class="map-grid">
+        <!-- Street View Embed -->
+        <iframe
+          class="map-frame"
+          src="https://www.google.com/maps/embed?pb=!4v1736000000000!6m8!1m7!1sVFYjdrljFfHHg7EffAhHww!2m2!1d44.6485238!2d-63.5747574!3f96.79!4f-6.17!5f0.7820852286272633"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="MANA GLOBAL Street View"
+        ></iframe>
+
+        <!-- Map View Embed -->
+        <iframe
+          class="map-frame"
+          src="https://www.google.com/maps?q=44.6485238,-63.5747574&z=17&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          title="MANA GLOBAL Location"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- FOOTER -->
+  <!-- ==================== -->
+  <footer>
+    <div class="container footer-flex">
+      <div class="footer-left">
+        <span data-i18n="footer.copyPrefix">©</span>
+        <span id="year"></span>
+        <span data-i18n="footer.copy">
+          MANA GLOBAL. All rights reserved.
+        </span>
+      </div>
+      <div class="footer-links">
+        <a href="#hero" data-i18n="footer.backToTop">Back to top</a>
+        <a href="#services" data-i18n="footer.services">Services</a>
+        <a href="#properties" data-i18n="footer.properties">Properties</a>
+        <a href="#contact" data-i18n="footer.contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== -->
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <!-- ==================== -->
+  <a
+    href="https://wa.me/905352992003"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    title="Contact us on WhatsApp"
+  >
+    <span class="whatsapp-icon">💬</span>
+  </a>
+
+  <!-- ==================== -->
+  <!-- SCROLL TO TOP BUTTON -->
+  <!-- ==================== -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">
+    ↑
+  </button>
+
+  <!-- ==================== -->
+  <!-- SCRIPTS -->
+  <!-- ==================== -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

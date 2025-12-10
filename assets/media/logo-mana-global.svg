@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="mgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4dabf7"></stop>
+      <stop offset="0.5" stop-color="#1c7ed6"></stop>
+      <stop offset="1" stop-color="#0b1020"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="#050814"></rect>
+
+  <!-- Outer border (soft) -->
+  <rect x="5.5" y="5.5" width="53" height="53" rx="13" ry="13" fill="none" stroke="rgba(148,163,184,0.7)" stroke-width="1.5"></rect>
+
+  <!-- Abstract building + M shape -->
+  <g transform="translate(12,10)" fill="url(#mgGradient)">
+    <!-- Left tower leg -->
+    <path d="M6 38 V14 A4 4 0 0 1 10 10 H12 V38 Z"></path>
+    <!-- Right tower leg -->
+    <path d="M32 38 V14 A4 4 0 0 0 28 10 H26 V38 Z"></path>
+
+    <!-- Middle diagonal (M peak as abstract roof) -->
+    <path d="M12 10 L20 24 L28 10" fill="none" stroke="url(#mgGradient)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path>
+
+    <!-- Base line -->
+    <rect x="6" y="37" width="26" height="3.2" rx="1.6"></rect>
+  </g>
+
+  <!-- Subtle glow -->
+  <ellipse cx="32" cy="50" rx="18" ry="4" fill="rgba(15,23,42,0.7)"></ellipse>
+</svg>
